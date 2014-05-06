@@ -17,7 +17,7 @@
 <?php if (count($all_comments)): ?>
 	<div id="comments">
 		<div class="commentHead">
-			<?= comments_popup_link('Leave a Comment<span></span>', '1 Comment<span></span>', '% Comments<span></span>', 'entry-comment-link its-icon its-quote'); ?>
+			<?php comments_popup_link('Leave a Comment<span></span>', '1 Comment<span></span>', '% Comments<span></span>', 'entry-comment-link its-icon its-quote'); ?>
 			<div class="commentHead-icon"></div>
 			<div class="dotBorder"></div>
 			<div class="cleaner"></div>  
@@ -74,9 +74,9 @@
 	<div id="trackbacks">
 		<span class="title"><?php the_title() ?></span>
 		<?php if (1 == $numTrackBacks): ?>
-			<h3><?= sprintf('%d Trackback', $numTrackBacks) ?></h3>
+			<h3><?php sprintf('%d Trackback', $numTrackBacks) ?></h3>
 		<?php else: ?>
-			<h3><?= sprintf('%d Trackbacks', $numTrackBacks ) ?></h3>
+			<h3><?php sprintf('%d Trackbacks', $numTrackBacks ) ?></h3>
 		<?php endif; ?>
 		<ul id="trackbacklist">
 			<?php foreach ((array)$comments as $comment): ?>

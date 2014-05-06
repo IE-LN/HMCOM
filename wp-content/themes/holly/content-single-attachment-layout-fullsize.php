@@ -14,34 +14,34 @@ function its_add_fullsize_to_permalink_for_comment_link($permalink, $post=null, 
 }
 ?>
 <?php do_action('its-before-single-gallery-image', $is_fullsize) ?>
-<div id="image-<?= $post->ID ?>" <?php post_class() ?>>
+<div id="image-<?php $post->ID ?>" <?php post_class() ?>>
 	<div class="gallery-inner-wrapper">
 		<div class="gallery-actions">
 			<div class="gallery-nav">
 				<div class="gallery-nav-inner">
 					<div class="next nav-item">
 						<?php $xtra = isset($_GET['page'], $_GET['t']) ? '?page='.(absint($_GET['page'])+1).'&t='.$_GET['t'] : '' ?>
-						<a <?= empty($next_img_url) ? 'class="disabled"' : 'href="'.$next_img_url.$xtra.'"' ?>
+						<a <?php empty($next_img_url) ? 'class="disabled"' : 'href="'.$next_img_url.$xtra.'"' ?>
 								title="Next Photo"><div class="arrow-wrap its-icon its-gallery-next"><span class="arrow"></span></div></a>
 					</div>
 					<div class="prev nav-item">
 						<?php $xtra = isset($_GET['page'], $_GET['t']) ? '?page='.(absint($_GET['page'])-1).'&t='.$_GET['t'] : '' ?>
-						<a <?= empty($prev_img_url) ? 'class="disabled"' : 'href="'.$prev_img_url.$xtra.'"' ?>
+						<a <?php empty($prev_img_url) ? 'class="disabled"' : 'href="'.$prev_img_url.$xtra.'"' ?>
 								title="Previous Photo"><div class="arrow-wrap its-icon its-gallery-prev"><span class="arrow"></span></div></a>
 					</div>
 				</div>
 			</div>
 			<div class="image-heading">
-				<h3 class="image-title"><?= get_the_title() ?></h3>
+				<h3 class="image-title"><?php get_the_title() ?></h3>
 				<div class="image-meta">
 					<ul class="image-meta-list menu">
 						<?php $xtra = isset($_GET['page'], $_GET['t']) ? '?page='.(absint($_GET['page'])).'&t='.$_GET['t'] : '' ?>
-						<li><a class="back" href="<?= get_permalink().$xtra ?>">&laquo; Back to Photo</a></li>
-						<li> / <span class="date"><?= get_the_time() ?></span> / </li>
+						<li><a class="back" href="<?php get_permalink().$xtra ?>">&laquo; Back to Photo</a></li>
+						<li> / <span class="date"><?php get_the_time() ?></span> / </li>
 						<li><?php
 							add_action('post_link', 'its_add_fullsize_to_permalink_for_comment_link', 10, 3);
 							add_action('attachment_link', 'its_add_fullsize_to_permalink_for_comment_link', 10, 2);
-						?><?=
+						?><?php 
 							comments_popup_link('Leave a Comment<span></span>', '1 Comment<span></span>', '% Comments<span></span>', 'entry-comment-link its-icon its-quote')
 						?><?php
 							remove_action('post_link', 'its_add_fullsize_to_permalink_for_comment_link');
@@ -57,10 +57,10 @@ function its_add_fullsize_to_permalink_for_comment_link($permalink, $post=null, 
 
 		<div class="gallery-image-frame clear">
 			<div class="gallery-image-wrapper">
-				<a <?= empty($next_img_url) ? 'class="disabled"' : 'href="'.$next_img_url.$xtra.'"' ?>><?=
+				<a <?php empty($next_img_url) ? 'class="disabled"' : 'href="'.$next_img_url.$xtra.'"' ?>><?php 
 					apply_filters('get-gallery-big-image', '', $post->ID, $tarsize, '', 'key-hole')
 				?></a>
-				<?php if (!empty($gal_pos)): ?><div class="gallery-position"><?= $gal_pos ?></div><?php endif; ?>
+				<?php if (!empty($gal_pos)): ?><div class="gallery-position"><?php $gal_pos ?></div><?php endif; ?>
 			</div>
 		</div>
 
@@ -68,24 +68,24 @@ function its_add_fullsize_to_permalink_for_comment_link($permalink, $post=null, 
 	</div>
 
 	<div class="image-entry">
-		<article id="post-<?= $post->ID ?>" class="image-entry-inner">
+		<article id="post-<?php $post->ID ?>" class="image-entry-inner">
 			<header class="image-header">
 				<div class="right grey">
-					<?= !empty($stag) ? $stag : '' ?>
-					<a href="<?= $furl ?>" title="View Original Image">View Original</a>
+					<?php !empty($stag) ? $stag : '' ?>
+					<a href="<?php $furl ?>" title="View Original Image">View Original</a>
 				</div>
-				<h3 class="image-title"><?= get_the_title() ?></h3>
+				<h3 class="image-title"><?php get_the_title() ?></h3>
 			</header>
 
-			<div class="image-content entry-content"><?= the_content() ?></div>
+			<div class="image-content entry-content"><?php the_content() ?></div>
 
 			<footer class="image-meta-footer">
 				<div class="image-meta-footer-inner">
-					<div class="add-this-image-wrap blue"><?= do_action('add-this-buttons', 'single-image') ?></div>
+					<div class="add-this-image-wrap blue"><?php do_action('add-this-buttons', 'single-image') ?></div>
 					<div class="share-buttons right">
 						<ul class="share-buttons-list menu">
-							<li class="share-button"><?= its_fb_like_button(); ?></li>
-							<li class="share-button"><?= its_twitter_share_button(); ?></li>
+							<li class="share-button"><?php its_fb_like_button(); ?></li>
+							<li class="share-button"><?php its_twitter_share_button(); ?></li>
 						</ul>
 					</div>
 

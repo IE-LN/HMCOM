@@ -18,9 +18,9 @@ $total_found_posts = 0;
 
 		<?php //if(strpos($_SERVER['REQUEST_URI'], 'post_tag')) { ?>
 		<?php if(isset($tag) && !empty($tag)) { ?>
-		<h1 class="search-results-header">Items tagged: <span class="search-results-term"><?= $search_term ?></span></h1>
+		<h1 class="search-results-header">Items tagged: <span class="search-results-term"><?php $search_term ?></span></h1>
 		<?php } else { ?>
-		<h1 class="search-results-header">Search results for: <span class="search-results-term"><?= $search_term ?></span></h1>
+		<h1 class="search-results-header">Search results for: <span class="search-results-term"><?php $search_term ?></span></h1>
 		<?php } ?>
 		<div class="search-search-results-breakdown search-results-breakdown">
 			<?php 

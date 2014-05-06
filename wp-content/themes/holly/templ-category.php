@@ -53,7 +53,7 @@ get_header();
 	<div id="content-column">
 		<div id="content" role="main">
 			<?php if (have_posts() && !empty($args['category_name'])): ?>
-				<?= apply_filters('bm-its-content-nav-category-page', '', 'nav-above') ?>
+				<?php apply_filters('bm-its-content-nav-category-page', '', 'nav-above') ?>
 				<div class="category-page-heading">
 					<?php /*
 					<div class="more-cats-container">
@@ -64,7 +64,7 @@ get_header();
 									<ul class="more-cats-list blackgreen">
 										<?php foreach (get_terms('category') as $term): ?>
 											<?php $url = get_term_link($term) ?>
-											<li><a href="<?= $url ?>"><?= $term->name ?></a></li>
+											<li><a href="<?php $url ?>"><?php $term->name ?></a></li>
 										<?php endforeach; ?>
 									</ul>
 								</div>
@@ -72,7 +72,7 @@ get_header();
 						</ul>
 					</div>
 					*/ ?>
-					<h1 class="category-name"><?= $cat->name ?></h1>
+					<h1 class="category-name"><?php $cat->name ?></h1>
 				</div>
 				<?php $post_cnt = 0; ?>
 				<?php while(have_posts()): the_post(); ?>
@@ -80,7 +80,7 @@ get_header();
 					<?php $post_cnt++ ?>
 					<?php do_action('its-story-well-after-story-'.$post_cnt); ?>
 				<?php endwhile; ?>
-				<?= apply_filters('bm-its-content-nav-caetgory-page', '', 'nav-below') ?>
+				<?php apply_filters('bm-its-content-nav-caetgory-page', '', 'nav-below') ?>
 			<?php else: ?>
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
@@ -98,7 +98,7 @@ get_header();
 			if (!empty($term_link) && !is_wp_error($term_link) && is_string($term_link))
 				$pagination_out = its_pagination(array('base' => $term_link.'%_%', 'greyed' => true, 'type' => 'list'));
 		?>
-		<div class="pagination-bottom"><?= $pagination_out ?></div>
+		<div class="pagination-bottom"><?php $pagination_out ?></div>
 
 	</div>
 

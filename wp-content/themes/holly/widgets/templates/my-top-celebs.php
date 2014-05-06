@@ -1,16 +1,16 @@
 <?php if (!$ajax): ?>
-<?= $before_widget ?>
+<?php $before_widget ?>
 <div class="bmsbw-container bmsbw-my-top-celebs">
-	<?= $before_title ?>
+	<?php $before_title ?>
 	<h3 class="bmsbw-title">
 		<?php if (bp_is_my_profile()): ?>
 			<span class="floatR"><a class="blue-link edit-top-celebs" href="#">Add Top Celebs</a></span>
 		<?php endif; ?>
-		<span><?= (bp_is_my_profile() ? 'My' : do_action('bp_add_displayed_user_display_name').'\'s') ?> Top Celebs</span>
+		<span><?php (bp_is_my_profile() ? 'My' : do_action('bp_add_displayed_user_display_name').'\'s') ?> Top Celebs</span>
 	</h3>
-	<?= $after_title ?>
+	<?php $after_title ?>
 	<div class="bmsbw-inside blackmaroon">
-		<input type="hidden" name="_tn" value="<?= $ajax_key ?>" class="top-celebs-tn" />
+		<input type="hidden" name="_tn" value="<?php $ajax_key ?>" class="top-celebs-tn" />
 		<div class="top-celeb-search-container hide">
 			<input type="text" name="se" value="Search" class="pre-text-helper top-celeb-search" />
 		</div>
@@ -33,7 +33,7 @@
 							<table>
 								<tbody>
 									<tr>
-										<td class="bmsbw-valign-fix-image"><a href="/celebrities/<?= $post->term_slug ?>" title="Read More" class="bmsbw-image-keyhole bmsbw-30x30-keyhole f"><?php
+										<td class="bmsbw-valign-fix-image"><a href="/celebrities/<?php $post->term_slug ?>" title="Read More" class="bmsbw-image-keyhole bmsbw-30x30-keyhole f"><?php
 											$img = apply_filters('celeb-profile-pic', 'no-img', array(30, 30), $post->celebrity_id);
 											if('no-img' == $img) {
 												$img = '<img src="' . get_bloginfo('stylesheet_directory') . '/images/cb_avatar_30x30.jpg' . '">';
@@ -43,10 +43,10 @@
 										<td class="bmsbw-valign-fix-title">
 											<h2>
 												<span class="bmsbw-celeb-name">
-													<a href="/celebrities/<?= $post->term_slug ?>/" title="Read More" class=""><?= apply_filters('the_title', $post->name, $post->celebrity_id) ?></a>
+													<a href="/celebrities/<?php $post->term_slug ?>/" title="Read More" class=""><?php apply_filters('the_title', $post->name, $post->celebrity_id) ?></a>
 												</span>
 												<?php if (bp_is_my_profile()): ?>
-													<span class="remove-celeb" cid="<?= $post->celebrity_id ?>">X</span>
+													<span class="remove-celeb" cid="<?php $post->celebrity_id ?>">X</span>
 												<?php endif; ?>
 											</h2>
 										</td>
@@ -57,7 +57,7 @@
 					<?php else: ?>
 						<li class="bmsbw-post-title-only">
 							<h2>
-								<span class="bmsbw-celeb-name"><?= apply_filters('the_title', $post->name, $post->celebrity_id) ?></span>
+								<span class="bmsbw-celeb-name"><?php apply_filters('the_title', $post->name, $post->celebrity_id) ?></span>
 							</h2>
 						</li>
 					<?php endif; ?>
@@ -69,5 +69,5 @@
 		<div class="cleaner"></div>
 	</div>
 </div>
-<?= $after_widget ?>
+<?php $after_widget ?>
 <?php endif; ?>

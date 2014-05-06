@@ -34,7 +34,7 @@ if (!function_exists('k_disableAdminBar')) {
 				html { margin-top: 0px !important; } 
 				* html body { margin-top: 0px !important; } 
 			</style>
-		<?php;
+		<?php
 	}
 }
 add_action('init','k_disableAdminBar'); // New version
@@ -249,7 +249,7 @@ function its_add_this($location='', $share=false) {
 	switch ($location):
 		case 'single':
 			?>
-			<ul class="addthis_toolbox addthis_default_style menu" addthis:url="<?= esc_attr(get_permalink()) ?>" addthis:title="<?= esc_attr(get_the_title()) ?>" >
+			<ul class="addthis_toolbox addthis_default_style menu" addthis:url="<?php esc_attr(get_permalink()) ?>" addthis:title="<?php esc_attr(get_the_title()) ?>" >
 				<?php if ($share): ?>
 					<li><span class="add-this-label">SHARE:</span></li>
 					</li></li>
@@ -257,11 +257,11 @@ function its_add_this($location='', $share=false) {
 				<li><a class="addthis_button_facebook its-icon its-facebook"><span></span></a></li>
 				<li><a class="addthis_button_twitter its-icon its-twitter"><span></span></a></li>
 				<li><a class="addthis_button_email its-icon its-email"><span></span></a></li>
-				<li><a href="http://addthis.com/bookmark.php?v=250&amp;pub=<?= $atacct ?>" class="addthis_button_compact its-icon its-more-share"><span></span></a></li>
+				<li><a href="http://addthis.com/bookmark.php?v=250&amp;pub=<?php $atacct ?>" class="addthis_button_compact its-icon its-more-share"><span></span></a></li>
 			</ul>
-			<script type="text/javascript">var addthis_share = { templates: { twitter: '<?= $twtbt ?>{{title}} {{url}}<?= $vtxt ?> @<?= $twat ?>' } }</script>
+			<script type="text/javascript">var addthis_share = { templates: { twitter: '<?php $twtbt ?>{{title}} {{url}}<?php $vtxt ?> @<?php $twat ?>' } }</script>
 			<?php /*
-			<div class="add-this-follow-us">Follow on: <a href="<?= esc_attr($fburl) ?>">Facebook</a> / <a href="<?= esc_attr($twurl) ?>">Twitter</a></div>
+			<div class="add-this-follow-us">Follow on: <a href="<?php esc_attr($fburl) ?>">Facebook</a> / <a href="<?php esc_attr($twurl) ?>">Twitter</a></div>
 			<div class="clear"></div>
 			*/ ?>
 			<?php
@@ -269,23 +269,23 @@ function its_add_this($location='', $share=false) {
 
 		case 'single-image':
 			?>
-			<ul class="addthis_toolbox addthis_default_style menu" addthis:url="<?= esc_attr(get_permalink()) ?>" addthis:title="<?= esc_attr(get_the_title()) ?>" >
+			<ul class="addthis_toolbox addthis_default_style menu" addthis:url="<?php esc_attr(get_permalink()) ?>" addthis:title="<?php esc_attr(get_the_title()) ?>" >
 				<?php if ($share): ?>
 					<li><span class="add-this-label">SHARE:</span></li>
 				<?php endif; ?>
 				<li><a class="addthis_button_facebook its-icon its-facebook"><span></span></a></li>
 				<li><a class="addthis_button_twitter its-icon its-twitter"><span></span></a></li>
 				<li><a class="addthis_button_email its-icon its-email"><span></span></a></li>
-				<li><a href="http://addthis.com/bookmark.php?v=250&amp;pub=<?= $atacct ?>" class="addthis_button_compact its-icon its-more-share"><span></span></a></li>
+				<li><a href="http://addthis.com/bookmark.php?v=250&amp;pub=<?php $atacct ?>" class="addthis_button_compact its-icon its-more-share"><span></span></a></li>
 			</ul>
-			<script type="text/javascript">var addthis_share = { templates: { twitter: '<?= $twtbt ?>{{title}} {{url}}<?= $vtxt ?> @<?= $twat ?>' } }</script>
+			<script type="text/javascript">var addthis_share = { templates: { twitter: '<?php $twtbt ?>{{title}} {{url}}<?php $vtxt ?> @<?php $twat ?>' } }</script>
 			<?php
 		break;
 
 		case 'home':
 		default:
 			?>
-			<ul class="addthis_toolbox addthis_default_style menu" addthis:url="<?= esc_attr(get_permalink()) ?>" addthis:title="<?= esc_attr(get_the_title()) ?>" >
+			<ul class="addthis_toolbox addthis_default_style menu" addthis:url="<?php esc_attr(get_permalink()) ?>" addthis:title="<?php esc_attr(get_the_title()) ?>" >
 				<?php if ($share): ?>
 					<li><span class="add-this-label">SHARE:</span></li>
 					</li></li>
@@ -293,9 +293,9 @@ function its_add_this($location='', $share=false) {
 				<li><a class="addthis_button_facebook its-icon its-facebook"><span></span></a></li>
 				<li><a class="addthis_button_twitter its-icon its-twitter"><span></span></a></li>
 				<li><a class="addthis_button_email its-icon its-email"><span></span></a></li>
-				<li><a href="http://addthis.com/bookmark.php?v=250&amp;pub=<?= $atacct ?>" class="addthis_button_compact its-icon its-more-share"><span></span></a></li>
+				<li><a href="http://addthis.com/bookmark.php?v=250&amp;pub=<?php $atacct ?>" class="addthis_button_compact its-icon its-more-share"><span></span></a></li>
 			</ul>
-			<script type="text/javascript">var addthis_share = { templates: { twitter: '<?= $twtbt ?>{{title}} {{url}}<?= $vtxt ?> @<?= $twat ?>' } }</script>
+			<script type="text/javascript">var addthis_share = { templates: { twitter: '<?php $twtbt ?>{{title}} {{url}}<?php $vtxt ?> @<?php $twat ?>' } }</script>
 			<?php
 		break;
 	endswitch;
@@ -431,7 +431,7 @@ function its_post_signature_block() {
 			?>
 				<div class="post-signature">
 					<div class="clear"></div>
-					<?= ice_get_attachment_image($img_id, 'orig-with-brand', 'post-signature-img') ?>
+					<?php ice_get_attachment_image($img_id, 'orig-with-brand', 'post-signature-img') ?>
 					<div class="clear"></div>
 				</div>
 			<?php
@@ -604,7 +604,7 @@ function its_header_meta() {
 		foreach ($meta as $k => $v) {
 			if (!empty($k)) {
 				?>
-				<meta name="<?= esc_attr($k) ?>" content="<?= esc_attr($v) ?>" />
+				<meta name="<?php esc_attr($k) ?>" content="<?php esc_attr($v) ?>" />
 				<?php
 			}
 		}
@@ -614,7 +614,7 @@ add_action('wp_head', 'its_header_meta', 10000);
 
 function its_home_rel_canonical() {
 	if (is_home()) {
-		?><link href="<?= esc_attr(trailingslashit(site_url())) ?>" rel="canonical"/><?php
+		?><link href="<?php esc_attr(trailingslashit(site_url())) ?>" rel="canonical"/><?php
 	}
 }
 add_action('wp_head', 'its_home_rel_canonical', 10000);

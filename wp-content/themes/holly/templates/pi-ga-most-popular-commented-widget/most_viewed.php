@@ -36,7 +36,7 @@
 	$postslist['comments'] = self::get_mostt_commented_old('-1 WEEK');
 
 	foreach($postslist as $list => $posts) { ?>
-		<div id="buzzbox_<?=$list;?>_list" style="<?=$buzzlist_style;?>">
+		<div id="buzzbox_<?php $list;?>_list" style="<?php $buzzlist_style;?>">
 		<?php $i=0;?>
 		<?php foreach($posts as $post) { ?>
 			<?php
@@ -57,17 +57,17 @@
 			?>
 			<div class="buzzbox_item">
 			<table cellpadding="0" cellspacing="0" class="buzzbox"><tr valign="top">
-			<td class="buzzbox_rank_<?=$i;?>"><?php echo $i;?></td>
+			<td class="buzzbox_rank_<?php $i;?>"><?php echo $i;?></td>
 			<td class="buzzbox_image"><div class="img_wrapp50x50">
-				<a href="<?=$post_url;?>" title="<?=htmlspecialchars($post->post_title);?>"><?=$img;?></a>
+				<a href="<?php $post_url;?>" title="<?php htmlspecialchars($post->post_title);?>"><?php $img;?></a>
 			</div></td>
-			<td class="buzzbox_title"><a href="<?=$post_url;?>" title="<?=htmlspecialchars($post->post_title);?>" class="buzzbox_link"><?=$post_title;?></a>
+			<td class="buzzbox_title"><a href="<?php $post_url;?>" title="<?php htmlspecialchars($post->post_title);?>" class="buzzbox_link"><?php $post_title;?></a>
 				<?php if ($post->comment_count == '0') { ?>
-				<span class="buzzbox_comment_count"><a href="<?=$post_url;?>#comments">Leave a Comment</a></span>
+				<span class="buzzbox_comment_count"><a href="<?php $post_url;?>#comments">Leave a Comment</a></span>
 				<?php } elseif ( isset( $comments_number ) && $comments_number == '1') { ?>
-				<span class="buzzbox_comment_count"><a href="<?=$post_url;?>#comments"><?=$post->comment_count;?> Comment</a></span>
+				<span class="buzzbox_comment_count"><a href="<?php $post_url;?>#comments"><?php $post->comment_count;?> Comment</a></span>
 				<?php } else { ?>
-				<span class="buzzbox_comment_count"><a href="<?=$post_url;?>#comments"><?=$post->comment_count;?> Comments</a></span>
+				<span class="buzzbox_comment_count"><a href="<?php $post_url;?>#comments"><?php $post->comment_count;?> Comments</a></span>
 				<?php } ?>
 			</td></tr></table></div>
 			<?php } ?>

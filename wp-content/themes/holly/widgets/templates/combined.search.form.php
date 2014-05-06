@@ -1,4 +1,4 @@
-<?= $before_widget ?>
+<?php $before_widget ?>
 <div class="bmsbw-container bmsbw-global-search-form bmsbw-thin">
 	<div class="bmsbw-inside blackmaroon">
 		<form id="search-form-cb" method="GET" action="/">
@@ -11,9 +11,9 @@
 				</ul>
 			</div>
 		
-			<input type="hidden" id="search_type" name="search_type" value="<?=isset($_COOKIE['search_pref']) && !empty($_COOKIE['search_pref']) ? $_COOKIE['search_pref']: 'all';?>" />
-			<input type="text" id="s" class="inputText" name="s" value="<?=(isset($_GET['s'])) ? $_GET['s'] : 'Search Celebuzz';?>"  onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
-			<input type="image" class="floatR" id="searchSubmit" name="searchSubmit" value="Search" src="<?= BMICE_URL ?>images/search-widget-btn.png" />
+			<input type="hidden" id="search_type" name="search_type" value="<?php isset($_COOKIE['search_pref']) && !empty($_COOKIE['search_pref']) ? $_COOKIE['search_pref']: 'all';?>" />
+			<input type="text" id="s" class="inputText" name="s" value="<?php (isset($_GET['s'])) ? $_GET['s'] : 'Search Celebuzz';?>"  onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
+			<input type="image" class="floatR" id="searchSubmit" name="searchSubmit" value="Search" src="<?php BMICE_URL ?>images/search-widget-btn.png" />
 		</form>
 	</div>
 </div>
@@ -39,4 +39,4 @@ jQuery(function($) {
 	});
 });
 </script>
-<?= $after_widget ?>
+<?php $after_widget ?>

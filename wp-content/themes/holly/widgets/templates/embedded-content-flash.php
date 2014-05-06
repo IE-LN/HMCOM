@@ -1,10 +1,10 @@
-<?= $before_widget ?>
+<?php $before_widget ?>
 <div class="bmsbw-container bmsbw-embedded-content-flash">
 	<?php if (!empty($instance['title'])): ?>
-		<?= $before_title ?><h3 class="bmsbw-title"><?= $instance['title'] ?></h3><?= $after_title ?>
+		<?php $before_title ?><h3 class="bmsbw-title"><?php $instance['title'] ?></h3><?php $after_title ?>
 	<?php endif; ?>
 	<div class="bmsbw-inside blackmaroon">
-		<?= $instance['embed'] ?>
+		<?php $instance['embed'] ?>
 	</div>
 </div>
-<?= $after_widget ?>
+<?php $after_widget ?>

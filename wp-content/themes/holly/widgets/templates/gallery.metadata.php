@@ -10,22 +10,22 @@
     setup_postdata($post);
     ?>
 
-    <?= $before_widget ?>
+    <?php $before_widget ?>
 	<div class="bmsbw-gallery-meta-widget span-gutter">
 		<div class="bmsbw-gutter-curve gutter-curve"><div class="curve-bottom-left curve"></div></div>
 		<div class="bmsbw-inside widget-inside">
 			<div class="bmsbw-inside-inner widget-inside-inner">
-				<article id="post-<?= get_the_ID() ?>" class="bmsbw-inside-inner-inner widget-inside-inner-inner">
+				<article id="post-<?php get_the_ID() ?>" class="bmsbw-inside-inner-inner widget-inside-inner-inner">
 					<header>
-						<h3 class="bmsbw-title post-title"><?= the_title() ?></h3>
+						<h3 class="bmsbw-title post-title"><?php the_title() ?></h3>
 						<nav class="bmsbw-sub-nav sub-nav">
-							<a href="<?= $back_url ?>" class="bmsbw-back back-to-post">&laquo; Back to Story</a>
+							<a href="<?php $back_url ?>" class="bmsbw-back back-to-post">&laquo; Back to Story</a>
 							/
 							<a href="#respond" class="bmsbw-leave-comment its-icon its-quote">Leave a Comment<span></span></a>
 						</nav>
 					</header>
 					
-					<div class="bmsbw-description entry-content"><?= get_the_content() ?></div>
+					<div class="bmsbw-description entry-content"><?php get_the_content() ?></div>
 
 					<footer class="bmsbw-metadata metadata">
 						<div class="bmsbw-related-to post-tags">
@@ -75,8 +75,8 @@
 							?></span>
 						</div>
 						<div class="bmsbw-like-and-share like-and-share">
-							<div class="share-buttons"><?= do_action('add-this-buttons', 'single-image', true) ?></div>
-							<div class="like-buttons"><?= apply_filters('like-and-share-buttons', '', get_the_ID(), array('fb')) ?></div>
+							<div class="share-buttons"><?php do_action('add-this-buttons', 'single-image', true) ?></div>
+							<div class="like-buttons"><?php apply_filters('like-and-share-buttons', '', get_the_ID(), array('fb')) ?></div>
 							<div class="clear"></div>
 						</div>
 						<div class="clear"></div>
@@ -88,6 +88,6 @@
 		<div class="bmsbw-gutter-curve gutter-curve"><div class="curve-top-left curve"></div></div>
 		*/ ?>
 	</div>
-	<?= $after_widget ?>
+	<?php $after_widget ?>
 
 <?php endif;

@@ -1,7 +1,7 @@
-<?= $before_widget ?>
+<?php $before_widget ?>
 <div class="bmsbw-container bmsbw-hot-celeb-photos bmsbw-gutter-cover">
 	<div class="bmsbw-gutter-cover-inner">
-		<?= $before_title ?><h3 class="bmsbw-title">Hot Celeb Photos</h3><?= $after_title ?>
+		<?php $before_title ?><h3 class="bmsbw-title">Hot Celeb Photos</h3><?php $after_title ?>
 		<div class="bmsbw-inside blackmaroon">
 			<?php $count = 0; ?>
 			<?php $total = min(count($posts), (int)$instance['celebs_to_show_max']); ?>
@@ -19,12 +19,12 @@
 							<table>
 								<tbody>
 									<tr>
-										<td class="bmsbw-valign-fix-image"><a href="<?= trailingslashit(get_permalink($post->celebrity_id)) ?>photos/" title="Read More"
-											class="bmsbw-image-keyhole bmsbw-30x30-keyhole f"><?= apply_filters('celeb-profile-pic', 'no-img', array(30, 30), $post->celebrity_id) ?></a></td>
+										<td class="bmsbw-valign-fix-image"><a href="<?php trailingslashit(get_permalink($post->celebrity_id)) ?>photos/" title="Read More"
+											class="bmsbw-image-keyhole bmsbw-30x30-keyhole f"><?php apply_filters('celeb-profile-pic', 'no-img', array(30, 30), $post->celebrity_id) ?></a></td>
 										<td class="bmsbw-valign-fix-title">
 											<h2>
-												<span class="bmsbw-celeb-name"><?= apply_filters('the_title', $post->name, $post->celebrity_id) ?></span>
-												<a class="bmsbw-more-link" href="<?= trailingslashit(get_permalink($post->celebrity_id)) ?>photos/" title="Find Photos"><?= number_format($post->count, 0, '.', ',') ?> Photos &raquo;</a>
+												<span class="bmsbw-celeb-name"><?php apply_filters('the_title', $post->name, $post->celebrity_id) ?></span>
+												<a class="bmsbw-more-link" href="<?php trailingslashit(get_permalink($post->celebrity_id)) ?>photos/" title="Find Photos"><?php number_format($post->count, 0, '.', ',') ?> Photos &raquo;</a>
 											</h2>
 										</td>
 									</tr>
@@ -34,8 +34,8 @@
 					<?php else: ?>
 						<li class="bmsbw-post-title-only">
 							<h2>
-								<span class="bmsbw-celeb-name"><?= apply_filters('the_title', $post->name, $post->celebrity_id) ?></span>
-								<a class="bmsbw-more-link" href="<?= trailingslashit(get_permalink($post->celebrity_id)) ?>photos/" title="Find Photos"><?= number_format($post->count, 0, '.', ',') ?> Photos &raquo;</a>
+								<span class="bmsbw-celeb-name"><?php apply_filters('the_title', $post->name, $post->celebrity_id) ?></span>
+								<a class="bmsbw-more-link" href="<?php trailingslashit(get_permalink($post->celebrity_id)) ?>photos/" title="Find Photos"><?php number_format($post->count, 0, '.', ',') ?> Photos &raquo;</a>
 							</h2>
 						</li>
 					<?php endif; ?>
@@ -46,4 +46,4 @@
 		</div>
 	</div>
 </div>
-<?= $after_widget ?>
+<?php $after_widget ?>

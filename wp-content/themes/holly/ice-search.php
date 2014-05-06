@@ -23,7 +23,7 @@ else:
 <div id="content-column">
     <div id="content" role="main">
         <?php do_action( 'bp_before_blog_single_post' ) ?>
-        <h1 class="search-results-header"><?= sprintf(
+        <h1 class="search-results-header"><?php sprintf(
             '%s <span class="search-results-term">%s</span>',
             $search_first['is_tag'] ? 'Items tagged' : 'Search results for:',
             $search_first['is_tag'] ? $tag_title : apply_filters('ice-search-fix-search-request', $search_first['value'])

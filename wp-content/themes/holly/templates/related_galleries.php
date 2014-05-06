@@ -15,10 +15,10 @@ global $ifunc, $pfunc, $ice_img;
             <?php $gal_title = apply_filters('the_title', $gal->post_title, $gal->ID); ?>
             <li class="related-gallery">
                 <div class="related-gallery-inner">
-                    <a class="left related-image-link" href="<?= $pfunc($gal->ID) ?>" title="<?= esc_attr($gal_title) ?>">
-                        <?= $ifunc(apply_filters('ice-gallery-first-image', $gal->ID), array(80, 60), $ice_img ? 'related-image' : false) ?>
+                    <a class="left related-image-link" href="<?php $pfunc($gal->ID) ?>" title="<?php esc_attr($gal_title) ?>">
+                        <?php $ifunc(apply_filters('ice-gallery-first-image', $gal->ID), array(80, 60), $ice_img ? 'related-image' : false) ?>
                     </a>
-                    <h2 class="related-title"><a href="<?= $pfunc($gal->ID) ?>" title="<?= esc_attr($gal_title) ?>"><?= $gal_title ?></a></h2>
+                    <h2 class="related-title"><a href="<?php $pfunc($gal->ID) ?>" title="<?php esc_attr($gal_title) ?>"><?php $gal_title ?></a></h2>
                 </div>
             </li>
             <?php endforeach; ?>

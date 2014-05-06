@@ -9,14 +9,14 @@
         $args = $block['request'];
         unset($args['search_type']);
         ?>
-        <a class="search-results-back-to-all" href="<?=apply_filters('ice-search-link', '', $args);?>">Back to All Results &raquo;</a>
-        <?= sprintf('%s (%d)', $generic_heading, $wp_query->found_posts) ?>
+        <a class="search-results-back-to-all" href="<?php apply_filters('ice-search-link', '', $args);?>">Back to All Results &raquo;</a>
+        <?php sprintf('%s (%d)', $generic_heading, $wp_query->found_posts) ?>
         <?php else: ?>
         <?php
         $args = $block['request'];
         $args['search_type'] = $block['type'];
         ?>
-        <?= sprintf('<a class="search-results-section-heading-link" href="%s">%s (%d)</a>', apply_filters('ice-search-link', '', $args), $generic_heading, $wp_query->found_posts) ?>
+        <?php sprintf('<a class="search-results-section-heading-link" href="%s">%s (%d)</a>', apply_filters('ice-search-link', '', $args), $generic_heading, $wp_query->found_posts) ?>
         <?php endif; ?>
     </h3>
 
@@ -26,8 +26,8 @@
     <?php $position = 1; ?>
     <?php while (have_posts()): the_post(); ?>
     <?php if ($ind % $per_row == 0): ?><div class="grid-row"><?php endif; ?>
-    <div class="grid-item column gallery-item third photos photos-<?= get_the_ID() ?>">
-        <div class="grid-item-inner third-inner<?= $ind % $per_row == 0 ? ' third-no-right-border' : '' ?>">
+    <div class="grid-item column gallery-item third photos photos-<?php get_the_ID() ?>">
+        <div class="grid-item-inner third-inner<?php $ind % $per_row == 0 ? ' third-no-right-border' : '' ?>">
             <?php do_action('ice-gallery-render-link', get_the_ID()); ?>
         </div>
     </div>
@@ -38,7 +38,7 @@
     <?php while ($ind % $per_row != 0): ?>
         <div class="grid-item column gallery-item third photos photos-0">
             <div class="grid-item-inner third-inner">
-                <article id="post-0-<?= $ind ?>" <?php post_class(); ?>>
+                <article id="post-0-<?php $ind ?>" <?php post_class(); ?>>
                     <header>
                         <span class="key-hole kht180x135 fake-pic"></span>
                         <div class="thirdDesc center">
@@ -47,7 +47,7 @@
                             <div class="gallery-photos-count more bold">&nbsp;</div>
                         </div>
                     </header>
-                </article><!-- end post-0-<?= $ind ?> -->
+                </article><!-- end post-0-<?php $ind ?> -->
             </div>
         </div>
         <?php $ind++; ?>
@@ -63,7 +63,7 @@
         $args = $block['request'];
         $args['search_type'] = $block['type'];
         ?>
-        <div class="results-more more"><a href="<?=apply_filters('ice-search-link', '', $args);?>">see all galleries &raquo;</a></div>
+        <div class="results-more more"><a href="<?php apply_filters('ice-search-link', '', $args);?>">see all galleries &raquo;</a></div>
     </div>
     <div class="cleaner"></div>
     <?php else: ?>
@@ -72,7 +72,7 @@
         $args['search_type'] = $block['type'];
         $pagination_out = its_pagination(array('base' => trailingslashit(apply_filters('ice-search-link', '', $args)).'%_%', 'greyed' => true, 'type' => 'list', 'per_page' => $block['count_type']));
         ?>
-    <div class="pagination-bottom"><?= $pagination_out ?></div>
+    <div class="pagination-bottom"><?php $pagination_out ?></div>
     <?php endif; ?>
 </div>
 <?php endif; ?>

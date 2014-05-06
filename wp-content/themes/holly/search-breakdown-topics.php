@@ -11,7 +11,7 @@ $total_found_posts += $found_posts;
 <?php if ($found_posts > 0): ?>
 	<div class="search-results-section results-section topics-results-section">
 		<h3 class="search-results-section-heading results-section-heading topics-results-section-heading">
-			<?= sprintf('%s (%d)', __('Celebs & Topics'), $found_posts) ?>
+			<?php sprintf('%s (%d)', __('Celebs & Topics'), $found_posts) ?>
 		</h3>
 		<div class="search-results-section-list-wrap results-section-list-wrap topics-results-section-list-wrap">
 			<div class="search-results-section-list results-section-list topics-results-section-list half-wrap">
@@ -34,19 +34,19 @@ $total_found_posts += $found_posts;
 					<div class="search-results-section-list-item results-section-list-item topics-results-section-list-item half">
 						<div class="result-item-wrap topics-result-item-wrap half-inner">
 							<div class="t50x50 image-wrap image-wrap-news floatL fake-pic">
-								<a href="<?= get_permalink($post->ID) ?>">
-								<?= wp_get_attachment_image($celeb_img[0], array(50, 50), 'i50x50 topic-result') ?></a>
+								<a href="<?php get_permalink($post->ID) ?>">
+								<?php wp_get_attachment_image($celeb_img[0], array(50, 50), 'i50x50 topic-result') ?></a>
 							</div>
 							<div class="post-content-wrap">
 								<div class="post-title-wrap">
-									<h2 class="posttitle"><a href="<?= get_permalink($post->ID) ?>"><?= get_the_title($post->ID) ?></a></h2>
+									<h2 class="posttitle"><a href="<?php get_permalink($post->ID) ?>"><?php get_the_title($post->ID) ?></a></h2>
 								</div>
 								<div class="post-meta">
 									<div class="post-drill-down-links">
 										<span class="icon-arrow"></span>
-										<a href="<?= get_permalink($post->ID) ?>photos">Photos</a> /
-										<a href="<?= get_permalink($post->ID) ?>news">News</a><?php if (in_array(get_post_type($post->ID), array('celebrity', 'noncelebs'))):?> /
-										<a href="<?= get_permalink($post->ID) ?>bio">Bio</a>
+										<a href="<?php get_permalink($post->ID) ?>photos">Photos</a> /
+										<a href="<?php get_permalink($post->ID) ?>news">News</a><?php if (in_array(get_post_type($post->ID), array('celebrity', 'noncelebs'))):?> /
+										<a href="<?php get_permalink($post->ID) ?>bio">Bio</a>
 										<?php endif; ?>
 									</div>
 									<div class="post-type"><?php

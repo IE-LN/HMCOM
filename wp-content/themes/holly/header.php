@@ -27,11 +27,11 @@
 			}
 		?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="pingback" href="<?= bloginfo('pingback_url'); ?>" />
-		<link rel="stylesheet" type="text/css" media="all" href="<?= bloginfo('stylesheet_url'); ?>?v=<?php echo get_public_version();?>" />
-		<link rel="icon" type="image/png" href="<?= get_template_directory_uri(); ?>/images/holly_favicon_3.png"/>
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('stylesheet_url'); ?>?v=<?php echo get_public_version();?>" />
+		<link rel="icon" type="image/png" href="<?php get_template_directory_uri(); ?>/images/holly_favicon_3.png"/>
 		<!--[if lt IE 9]>
-			<script src="<?= get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+			<script src="<?php get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 		<![endif]-->
 		<?php if (is_singular() && get_option('thread_comments')) wp_enqueue_script( 'comment-reply' ); ?>
 		<?php wp_head(); ?>
@@ -63,10 +63,10 @@
 						$header_class = 'slim-height';
 					}
 				?>
-				<header id="branding" role="banner" class="<?= empty($use_sub_nav) ? 'extra-header-margin' : '' ?> <?php echo $header_class; ?>">
-					<h1 class="site-title"><a href="<?= home_url('/') ?>" title="<?= esc_attr(get_bloginfo('name')) ?>"><?= get_bloginfo('name') ?></a></h1>
+				<header id="branding" role="banner" class="<?php empty($use_sub_nav) ? 'extra-header-margin' : '' ?> <?php echo $header_class; ?>">
+					<h1 class="site-title"><a href="<?php home_url('/') ?>" title="<?php esc_attr(get_bloginfo('name')) ?>"><?php get_bloginfo('name') ?></a></h1>
 					<div class="branding-container">
-						<a href="<?= apply_filters('the_permalink', home_url('/')) ?>" title="<?= esc_attr(get_bloginfo('name')) ?>">
+						<a href="<?php apply_filters('the_permalink', home_url('/')) ?>" title="<?php esc_attr(get_bloginfo('name')) ?>">
 							<?php 
 							//var_dump($post);
 							if ($is_slim_header) {
@@ -84,11 +84,11 @@
 
 					<?php /*
 					<div class="left-column">
-						<a href="<?= home_url('/') ?>" title="<?= esc_attr(get_bloginfo('name')) ?>"><div class="left-branding-image"></div></a>
+						<a href="<?php home_url('/') ?>" title="<?php esc_attr(get_bloginfo('name')) ?>"><div class="left-branding-image"></div></a>
 					</div>
 
 					<div class="right-column">
-						<a href="<?= home_url('/') ?>" title="<?= esc_attr(get_bloginfo('name')) ?>"><div class="right-branding-image"></div></a>
+						<a href="<?php home_url('/') ?>" title="<?php esc_attr(get_bloginfo('name')) ?>"><div class="right-branding-image"></div></a>
 						<nav id="main-nav" role="navigation">
 							<?php wp_nav_menu(array('theme_location' => 'main-menu')); ?>
 							<div class="clear"></div>
@@ -103,7 +103,7 @@
 						<?php $out = trim(ob_get_contents()); ?>
 						<?php ob_end_clean();?>
 						<?php if (!empty($out)): ?>
-							<div class="carousel-container <?= is_descendant_of('photos', 'page', true) ? '' : 'add-bottom-gap' ?>" id="featured"><?= $out ?></div>
+							<div class="carousel-container <?php is_descendant_of('photos', 'page', true) ? '' : 'add-bottom-gap' ?>" id="featured"><?php $out ?></div>
 						<?php endif; ?>
 					<?php endif;?>
 

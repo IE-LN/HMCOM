@@ -21,24 +21,24 @@ if($redirect)$args['redirect'] = $redirect;
 ?>
 <div id="login-page">
 	<div class="fb-divider">OR</div>
-	<h2 class="sign-in-title">Sign in to <span class="sign-in-its-name"><?=get_bloginfo('name');?></span> on Celebuzz</h2>
+	<h2 class="sign-in-title">Sign in to <span class="sign-in-its-name"><?php get_bloginfo('name');?></span> on Celebuzz</h2>
 	<table><tbody>
 	<tr><td class="sign-in-form-left">
         <?php if(isset($_REQUEST['fb_login_error'])){ ?>
             <span id="ice-login-status" class="invalid">
-                <?=apply_filters('ice_fb_get_message_by_error_code', '', $_REQUEST['fb_login_error']);?>
+                <?php apply_filters('ice_fb_get_message_by_error_code', '', $_REQUEST['fb_login_error']);?>
             </span>
         <?php }else { ?>
             <span id="ice-login-status"></span>
         <?php } ?>
-        <?= wp_login_form( $args ); ?>
+        <?php wp_login_form( $args ); ?>
 	</td><td class="sign-in-form-right">
 	<p>Sign in with Facebook</p>
     <?php do_shortcode("[fb_login login_text='Login with Facebook' logout_text='Logout']"); ?>
 	</td></tr>
 	</tbody></table>
 	<div id="login-links">
-	Not a member? <a class="join" href="<?=site_url(ICE_REGISTER_SLUG);?>">Join Now</a> / <a href="<?=site_url('/wp-login.php?action=lostpassword');?>">Forgot your password?</a>
+	Not a member? <a class="join" href="<?php site_url(ICE_REGISTER_SLUG);?>">Join Now</a> / <a href="<?php site_url('/wp-login.php?action=lostpassword');?>">Forgot your password?</a>
 	</div>
 
 </div>

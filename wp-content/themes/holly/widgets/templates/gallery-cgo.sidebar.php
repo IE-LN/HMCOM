@@ -1,11 +1,11 @@
 <?php
 $func = function_exists('ice_get_attachment_image') ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
 ?>
-<?= $before_widget ?>
-<div class="bmsbw-container bmsbw-gallery-sidebar <?= $instance['css_container_class'] ?>">
+<?php $before_widget ?>
+<div class="bmsbw-container bmsbw-gallery-sidebar <?php $instance['css_container_class'] ?>">
 	<div class="bmsbw-photoHead">
 		<?php wp_nav_menu(array('theme_location' => 'hot-photos-widget-filters')); ?>
-		<?= $before_title ?><span class="bmsbw-title"><?=$instance['widget_title']?></span><?= $after_title ?>
+		<?php $before_title ?><span class="bmsbw-title"><?php $instance['widget_title']?></span><?php $after_title ?>
 		<div class="clear"></div>
 		<?php /*
 		  <ul class="bmsbw-sub-nav-links menu right">
@@ -39,10 +39,10 @@ $func = function_exists('ice_get_attachment_image') ? 'ice_get_attachment_image'
 					?>
 						<td class="bmsbw-gallery-image-block">
 							<?php if ($img): ?>
-								<div class="bmsbw-valign-fix-image bmsbw-94x94-keyhole"><a href="<?= $perma ?>" title="Read More"
-									class="bmsbw-image-keyhole"><?= $img ?></a></div>
+								<div class="bmsbw-valign-fix-image bmsbw-94x94-keyhole"><a href="<?php $perma ?>" title="Read More"
+									class="bmsbw-image-keyhole"><?php $img ?></a></div>
 							<?php endif; ?>
-								<div class="bmsbw-title-fix"><h2><a href="<?= $perma ?>" title="Read More"><?= the_title() ?></a></h2></div>
+								<div class="bmsbw-title-fix"><h2><a href="<?php $perma ?>" title="Read More"><?php the_title() ?></a></h2></div>
 						</td>
 					<?php
 						endforeach;
@@ -53,8 +53,8 @@ $func = function_exists('ice_get_attachment_image') ? 'ice_get_attachment_image'
 		</div>
 	</div>
 	<div class="bmsbw-bottom blue">
-		<a class="see-more" href="<?= home_url()?>/photos/">See All Photos &raquo;</a>
+		<a class="see-more" href="<?php home_url()?>/photos/">See All Photos &raquo;</a>
 		<div class="clear"></div>
 	</div>
 </div>
-<?= $after_widget ?>
+<?php $after_widget ?>

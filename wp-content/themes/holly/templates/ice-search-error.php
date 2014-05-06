@@ -10,9 +10,9 @@ if (!have_posts()) $search_info['error'] .= ' No results were found.';
 <?php $hide_pagenavi = true; ?>
 <div id="content-column">
 	<div id="content" role="main">
-		<h1 class="search-results-header">Search results for: <span class="search-results-term"><?=htmlspecialchars($search_info['value']);?></span></h1>
+		<h1 class="search-results-header">Search results for: <span class="search-results-term"><?php htmlspecialchars($search_info['value']);?></span></h1>
 		<div class="search-search-results-breakdown search-results-breakdown">
-			<div class="search-error"><?=$search_info['error'];?></div>
+			<div class="search-error"><?php $search_info['error'];?></div>
 		</div>
 	</div><!-- #content -->
 </div>
@@ -25,8 +25,8 @@ function ice_er_search_submit()
 	$args['search_value'] = '%s';
 	?>
 	<?php if($o){ ?>
-	var rule='<?= apply_filters('ice-search-link', 'search/%s', $args);?>';
-	var ws='<?=$o['word_separator'];?>';
+	var rule='<?php apply_filters('ice-search-link', 'search/%s', $args);?>';
+	var ws='<?php $o['word_separator'];?>';
 	<?php }else{ ?>
 	var rule='<?php bloginfo('url'); ?>/search/%s';
 	var ws='%20';

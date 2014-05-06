@@ -68,7 +68,7 @@ function buzzmediaads_draw_option($args) {
 	if (!empty($args['option_type']) && !empty($args['label_for'])) {
 		switch ($args['option_type']) {
 			case 'text-box':
-				?><input type="text" name="<?= $args['label_for'] ?>" id="<?= $args['label_for'] ?>" value="<?= form_option($args['label_for']) ?>" class="widefat"/><?php
+				?><input type="text" name="<?php $args['label_for'] ?>" id="<?php $args['label_for'] ?>" value="<?php form_option($args['label_for']) ?>" class="widefat"/><?php
 			break;
 		}
 	}
@@ -93,8 +93,8 @@ function buzzmedia_top_script() {
 		$domain = 'extensions-staging.jcugnodev1.buzznetdev.com';
 
 	if (!defined('SHOW_ADS') || SHOW_ADS == true): ?>
-		<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','<?=$ga_account_id?>']);_gaq.push(['_trackPageview']);<?php do_action('pi-ga-pageview-track'); ?>(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
-		<script type="text/javascript" src="http://<?= $domain ?>/topscript.js.php?siteToken=<?php echo $ads_site_token; ?>"></script><?php
+		<script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','<?php $ga_account_id?>']);_gaq.push(['_trackPageview']);<?php do_action('pi-ga-pageview-track'); ?>(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src=('https:'==document.location.protocol?'https://ssl':'http://www')+'.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();</script>
+		<script type="text/javascript" src="http://<?php $domain ?>/topscript.js.php?siteToken=<?php echo $ads_site_token; ?>"></script><?php
 	endif;
 }
 

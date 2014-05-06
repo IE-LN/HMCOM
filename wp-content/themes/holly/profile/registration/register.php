@@ -8,7 +8,7 @@ get_header();
 <div id="containerMain">
 <div id="register-page">
     <div class="register-header">
-        <h1>JOIN <span class="its_green"><?=get_bloginfo('name');?></span> on CELEBUZZ </h1>
+        <h1>JOIN <span class="its_green"><?php get_bloginfo('name');?></span> on CELEBUZZ </h1>
 
         <?php if ( 'request-details' == icep_get_current_signup_step() ) { ?>
         <div class="already-member">Already a member? <a class="sign-in" href="/sign-in/" title="Sign-in to your account."><?php _e( 'Sign in', 'buddypress' ) ?></a></div>
@@ -167,8 +167,8 @@ get_header();
                         <?php do_action( 'icep_accept_tos_errors' ) ?>
 
                         <div class="checkbox">
-                            <span class="label"> <input type="checkbox" name="accept_tos" id="accept_tos" value="agreed" <?= $accept_tos_checked ?> />I agree to the Celebuzz <a href="<?=apply_filters('get-celebuzz-url', '/', '/');?>terms-of-service" target="_blank">Terms Of Service and Privacy Policy</a></span>
-                            <span class="label"><input type="checkbox" name="send_newsletter" id="send_newsletter" value="Y" <?= $send_newsletter_checked ?> />Include me on the Celebuzz mailing list</span>
+                            <span class="label"> <input type="checkbox" name="accept_tos" id="accept_tos" value="agreed" <?php $accept_tos_checked ?> />I agree to the Celebuzz <a href="<?php apply_filters('get-celebuzz-url', '/', '/');?>terms-of-service" target="_blank">Terms Of Service and Privacy Policy</a></span>
+                            <span class="label"><input type="checkbox" name="send_newsletter" id="send_newsletter" value="Y" <?php $send_newsletter_checked ?> />Include me on the Celebuzz mailing list</span>
                         </div>
 
                     </div><!-- #profile-details-section -->
@@ -216,7 +216,7 @@ get_header();
                 <?php else : ?>
                     <p><?php _e( 'You have successfully created your account! Please log in using the username and password you have just created.', 'buddypress' ) ?></p>
                 <?php endif; ?>
-                    <span class="its_green"><a href="<?=htmlspecialchars(site_url());?>">Return to <?=get_bloginfo('name');?></a><span>
+                    <span class="its_green"><a href="<?php htmlspecialchars(site_url());?>">Return to <?php get_bloginfo('name');?></a><span>
 
 
             <?php endif; // completed-confirmation signup step ?>

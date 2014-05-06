@@ -1,15 +1,15 @@
 <?php get_currentuserinfo(); ?>
 <div id="respond" class="comments-form">
 	<div class="comments-form-inner">
-		<h3 id="reply" class="comments-form-header"><?= comment_form_title('LEAVE A COMMENT', 'Reply to %s', true); ?></h3>
+		<h3 id="reply" class="comments-form-header"><?php comment_form_title('LEAVE A COMMENT', 'Reply to %s', true); ?></h3>
 		<?php if (get_option('comment_registration') && (!is_object($current_user) || !isset($current_user->ID) || empty($current_user->ID))): ?>
-			<p class="alert"><?= sprintf('You must be <a href="%1$s" title="Log in">logged in</a> to post a comment.', wp_login_url(get_permalink())); ?></p>
+			<p class="alert"><?php sprintf('You must be <a href="%1$s" title="Log in">logged in</a> to post a comment.', wp_login_url(get_permalink())); ?></p>
 		<?php else: ?>
-			<form action="<?= home_url('/wp-comments-post.php') ?>" method="POST" id="commentform" class="standard-form">
+			<form action="<?php home_url('/wp-comments-post.php') ?>" method="POST" id="commentform" class="standard-form">
 				<div class="current-user-info blue">
 					<?php if (!is_user_logged_in()): ?>
 						<div class="alternative-login">
-							<?= do_action('alternative-login'); ?>
+							<?php do_action('alternative-login'); ?>
 							<div class="facebook-connect">Use Facebook:
 								<div class="facebook-connect-box"><?php do_shortcode("[bmfbc_login login_text='Login' logout_text='Logout']"); ?></div>
 							</div>
@@ -23,9 +23,9 @@
 						<?php global $current_user, $fb_uid; ?>
 						<?php $generic_avatar = apply_filters('ice-comments-avatar-30-url', get_bloginfo('stylesheet_directory').'/images/guest-user-avatar-30.png'); ?>
 						<?php if (is_user_logged_in()): ?>
-							<a href="<? apply_filters('user-profile-link', '', $current_user->ID) ?>"><?= get_avatar($current_user->ID, 30, $generic_avatar); ?></a>
+							<a href="<?php apply_filters('user-profile-link', '', $current_user->ID) ?>"><?php get_avatar($current_user->ID, 30, $generic_avatar); ?></a>
 						<?php else: ?>
-							<?= get_avatar('', 30, $generic_avatar); ?>
+							<?php get_avatar('', 30, $generic_avatar); ?>
 						<?php endif; ?>
 					</div>
 
@@ -37,9 +37,9 @@
 								//$signout_link = apply_filters('logout_url', home_url('/sign-out/'));
 								$signout_link = wp_logout_url();
 							?>
-							Signed in as <a href="<? apply_filters('user-profile-link', '', $current_user->ID) ?>"><?= $display_name ?></a>.
-							<a class="sign-out log-in-out-link" href="<?= $signout_link ?>">Log out</a>
-							<?= cancel_comment_reply_link('Cancel Reply') ?>
+							Signed in as <a href="<?php apply_filters('user-profile-link', '', $current_user->ID) ?>"><?php $display_name ?></a>.
+							<a class="sign-out log-in-out-link" href="<?php $signout_link ?>">Log out</a>
+							<?php cancel_comment_reply_link('Cancel Reply') ?>
 						</div>
 					<?php else: ?>
 						<div class="sign-in-status log-in-out-guest log-in-out">
@@ -66,7 +66,7 @@
 							setcookie('_its_signup_blog', "$val", time()+30*86400, '/', $_SERVER['HTTP_HOST']);
 							*/
 							?>
-							<a href="<?=bloginfo('siteurl')?>/../../register/?<?=$parm?>">Join</a>
+							<a href="<?php bloginfo('siteurl')?>/../../register/?<?php $parm?>">Join</a>
 							.
 						</div>
 					<?php endif; ?>
@@ -98,11 +98,11 @@
 							<tbody>
 								<tr>
 									<td>
-										<input type="text" class="text-input" name="author" id="author" value="<?= $comment_author; ?>" size="40" tabindex="1"
+										<input type="text" class="text-input" name="author" id="author" value="<?php $comment_author; ?>" size="40" tabindex="1"
 											onblur="javascript:check_author(this.value);"/>
 									</td>
 									<td>
-										<input type="text" class="text-input" name="email" id="email" value="<?= $comment_author_email; ?>" size="40" tabindex="2" />
+										<input type="text" class="text-input" name="email" id="email" value="<?php $comment_author_email; ?>" size="40" tabindex="2" />
 									</td>
 									<td>
 										<input class="submit-comment button" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit', 'buddypress'); ?>" />
@@ -124,7 +124,7 @@
 							})(jQuery);
 						}
 					</script>
-					<div id="comment-upload-form"><? ecu_upload_form('','','Select File')?></div>
+					<div id="comment-upload-form"><?php ecu_upload_form('','','Select File')?></div>
 				<?php endif; ?>
 			</form>
 		<?php endif; ?>

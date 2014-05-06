@@ -109,9 +109,9 @@ if (!class_exists('bmits_theme_ice_tab')):
 		public static function mb_shared_nav($tab, $mbargs) {
 			?>
 				<p>
-					<label for="<?= self::$opt_pre ?>celebuzz-url">Celebuzz Url:</label>
-					<input type="hidden" name="<?= self::$opt_pre ?>celebuzz-url" value="0" />
-					<input type="text" class="widefat" name="<?= self::$opt_pre ?>celebuzz-url" value="<?= self::$settings['celebuzz-url'] ?>" />
+					<label for="<?php self::$opt_pre ?>celebuzz-url">Celebuzz Url:</label>
+					<input type="hidden" name="<?php self::$opt_pre ?>celebuzz-url" value="0" />
+					<input type="text" class="widefat" name="<?php self::$opt_pre ?>celebuzz-url" value="<?php self::$settings['celebuzz-url'] ?>" />
 				</p>
 			<?php
 		}
@@ -120,29 +120,29 @@ if (!class_exists('bmits_theme_ice_tab')):
 		public static function mb_theme_settings($tab, $mbargs) {
 			?>
 				<p>
-					<label for="<?= self::$opt_pre ?>addthis-acct">addThis Account Name:</label>
-					<input type="hidden" name="<?= self::$opt_pre ?>addthis-acct" value="0" />
-					<input type="text" class="widefat" name="<?= self::$opt_pre ?>addthis-acct" value="<?= self::$settings['addthis-acct'] ?>" />
+					<label for="<?php self::$opt_pre ?>addthis-acct">addThis Account Name:</label>
+					<input type="hidden" name="<?php self::$opt_pre ?>addthis-acct" value="0" />
+					<input type="text" class="widefat" name="<?php self::$opt_pre ?>addthis-acct" value="<?php self::$settings['addthis-acct'] ?>" />
 				</p>
 				<p>
-					<label for="<?= self::$opt_pre ?>twitter-social-url">Twitter URL:</label>
-					<input type="hidden" name="<?= self::$opt_pre ?>twitter-social-url" value="0" />
-					<input type="text" class="widefat" name="<?= self::$opt_pre ?>twitter-social-url" value="<?= self::$settings['twitter-social-url'] ?>" />
+					<label for="<?php self::$opt_pre ?>twitter-social-url">Twitter URL:</label>
+					<input type="hidden" name="<?php self::$opt_pre ?>twitter-social-url" value="0" />
+					<input type="text" class="widefat" name="<?php self::$opt_pre ?>twitter-social-url" value="<?php self::$settings['twitter-social-url'] ?>" />
 				</p>
 				<p>
-					<label for="<?= self::$opt_pre ?>twitter-at-name">Twitter @ name:</label>
-					<input type="hidden" name="<?= self::$opt_pre ?>twitter-at-name" value="0" />
-					<input type="text" class="widefat" name="<?= self::$opt_pre ?>twitter-at-name" value="<?= self::$settings['twitter-at-name'] ?>" />
+					<label for="<?php self::$opt_pre ?>twitter-at-name">Twitter @ name:</label>
+					<input type="hidden" name="<?php self::$opt_pre ?>twitter-at-name" value="0" />
+					<input type="text" class="widefat" name="<?php self::$opt_pre ?>twitter-at-name" value="<?php self::$settings['twitter-at-name'] ?>" />
 				</p>
 				<p>
-					<label for="<?= self::$opt_pre ?>twitter-text-before-title">Twitter Text Before Title:</label>
-					<input type="hidden" name="<?= self::$opt_pre ?>twitter-text-before-title" value="0" />
-					<input type="text" class="widefat" name="<?= self::$opt_pre ?>twitter-text-before-title" value="<?= self::$settings['twitter-text-before-title'] ?>" />
+					<label for="<?php self::$opt_pre ?>twitter-text-before-title">Twitter Text Before Title:</label>
+					<input type="hidden" name="<?php self::$opt_pre ?>twitter-text-before-title" value="0" />
+					<input type="text" class="widefat" name="<?php self::$opt_pre ?>twitter-text-before-title" value="<?php self::$settings['twitter-text-before-title'] ?>" />
 				</p>
 				<p>
-					<label for="<?= self::$opt_pre ?>facebook-social-url">Facebook URL:</label>
-					<input type="hidden" name="<?= self::$opt_pre ?>facebook-social-url" value="0" />
-					<input type="text" class="widefat" name="<?= self::$opt_pre ?>facebook-social-url" value="<?= self::$settings['facebook-social-url'] ?>" />
+					<label for="<?php self::$opt_pre ?>facebook-social-url">Facebook URL:</label>
+					<input type="hidden" name="<?php self::$opt_pre ?>facebook-social-url" value="0" />
+					<input type="text" class="widefat" name="<?php self::$opt_pre ?>facebook-social-url" value="<?php self::$settings['facebook-social-url'] ?>" />
 				</p>
 			<?php
 		}

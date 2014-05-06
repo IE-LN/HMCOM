@@ -1,4 +1,4 @@
-<?= $before_widget ?>
+<?php $before_widget ?>
 <div class="bmsbw-container bmsbw-hot-now bmsbw-cb-hot-now">
 	<div class="hotNowHead-cb widget-title">
 		<span class="hotNowHead-inner">
@@ -44,12 +44,12 @@
 						<table>
 							<tbody>
 								<tr>
-									<td><div class="<?=$class?>"></div></td>
-									<td class="bmsbw-valign-fix-image" width="1%"><a href="<?= $post->permalink ?>" title="Read More"
-										class="left key-hole kht80x60"><?= $post['thumb']?></a></td>
+									<td><div class="<?php $class?>"></div></td>
+									<td class="bmsbw-valign-fix-image" width="1%"><a href="<?php $post->permalink ?>" title="Read More"
+										class="left key-hole kht80x60"><?php $post['thumb']?></a></td>
 									<td class="bmsbw-valign-fix-title">
 										<h2 class="bmsbw-title-wrapper">
-											<a href="<?= $post['permalink'] ?>" title="Read More"><?= $post['post_title']?></a>
+											<a href="<?php $post['permalink'] ?>" title="Read More"><?php $post['post_title']?></a>
 										</h2>
 									</td>
 								</tr>
@@ -58,9 +58,9 @@
 					</li>
 				<?php else: /** if we do not have a thumb to display */ ?>
 					<li class="bmsbw-post-title-only">
-						<div class="<?=$class?>"></div>
+						<div class="<?php $class?>"></div>
 						<h2 class="bmsbw-title-wrapper">
-							<a href="<?= $post['permalink'] ?>" title="Read More"><?= $post->post_title?></a>
+							<a href="<?php $post['permalink'] ?>" title="Read More"><?php $post->post_title?></a>
 						</h2>
 					</li>
 				<?php endif; ?>
@@ -69,8 +69,8 @@
 		</ul>
 	</div>
 		<div class="bmsbw-bottom blue hotIcon blackmaroon">
-			<a class="see-more" href="<?= apply_filters('get-celebuzz-url', '', '/hot-now/'); ?>">SEE MORE &raquo;</a>
+			<a class="see-more" href="<?php apply_filters('get-celebuzz-url', '', '/hot-now/'); ?>">SEE MORE &raquo;</a>
 			<div class="clear"></div>
 		</div>
 </div>
-<?= $after_widget ?>
+<?php $after_widget ?>

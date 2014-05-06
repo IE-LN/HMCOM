@@ -8,13 +8,13 @@ get_header(); ?>
 	<div id="content-column">
 		<div id="content" role="main">
 			<?php if (have_posts()): ?>
-				<?= apply_filters('bm-its-content-nav', '', 'nav-above') ?>
+				<?php apply_filters('bm-its-content-nav', '', 'nav-above') ?>
 				<?php while(have_posts()): the_post(); ?>
 					<?php do_action('its-before-post') ?>
-					<article id="post-<?= get_the_ID(); ?>" <?php post_class(); ?>>
+					<article id="post-<?php get_the_ID(); ?>" <?php post_class(); ?>>
 						<header class="entry-header">
 							<h2 class="entry-title blackmaroon">
-								<a href="<?php the_permalink(); ?>" title="<?= esc_attr(sprintf('Permalink to %s', get_the_title())); ?>" rel="bookmark"><?php the_title(); ?></a>
+								<a href="<?php the_permalink(); ?>" title="<?php esc_attr(sprintf('Permalink to %s', get_the_title())); ?>" rel="bookmark"><?php the_title(); ?></a>
 							</h2>
 
 							<div class="entry-meta">
@@ -34,7 +34,7 @@ get_header(); ?>
 					</article><!-- #post-<?php the_ID(); ?> -->
 					<?php do_action('its-after-post') ?>
 				<?php endwhile; ?>
-				<?= apply_filters('bm-its-content-nav', '', 'nav-below') ?>
+				<?php apply_filters('bm-its-content-nav', '', 'nav-below') ?>
 			<?php else: ?>
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">

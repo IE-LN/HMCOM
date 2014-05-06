@@ -1,4 +1,4 @@
-<?= $before_widget ?>
+<?php $before_widget ?>
 <div class="bmsbw-container bmsbw-carousel-sidebar">
 	<?php $class = is_home() ? 'escalation-home' : 'escalation-slim'; ?>
 	<?php $dm_class = is_home() ? 'display-mode-'.$instance['display_mode'] : ''; ?>
@@ -11,8 +11,8 @@
 	<?php // [toy 16aug11] audjusted for frisky size ?>
 	<?php $ddd = array(100,75); $hei = array_pop($ddd); ?>
 
-	<div class="bmsbw-inside <?= $class ?> <?= $dm_class ?>">
-		<ul class="jcarousel-list jcarousel-skin-tango-header default-height-<?= $hei ?>">
+	<div class="bmsbw-inside <?php $class ?> <?php $dm_class ?>">
+		<ul class="jcarousel-list jcarousel-skin-tango-header default-height-<?php $hei ?>">
 			<?php $count = 0 ?>
 			<?php foreach ($posts as $post): ?>
 				<?php $count++ ?>
@@ -35,10 +35,10 @@
 						$img = '&nbsp;';
 					}
 				?>
-				<li class="<?= $tar_img_li ?>">
+				<li class="<?php $tar_img_li ?>">
 					<span class="escalation-image-wrapper">
-						<a href="<?=$url?>" class="escalation-image-keyhole <?= $tar_img_kh ?>">
-							<?= $img ?>
+						<a href="<?php $url?>" class="escalation-image-keyhole <?php $tar_img_kh ?>">
+							<?php $img ?>
 							<div class="minty-overlay"><div class="minty-border"><div class="minty-middle"></div></div></div>
 						</a>
 					</span>
@@ -47,7 +47,7 @@
 						?><div class="escalation-side-text-wrap">
 							<h2 class="escalation-side-text"><?php
 							if (!empty($instance['top_text'])) {
-								?><?=$instance['top_text']?><br /><?php
+								?><?php $instance['top_text']?><br /><?php
 							}?>
 							<ul id="escalation-list">
 							<?php
@@ -56,10 +56,10 @@
 									?><li><?php
 								}
 								if (!empty($text_link['link']) && !empty($text_link['text'])) {
-									?><a href="<?= $text_link['link'] ?>" class="escalation-side-text-link"><?php
+									?><a href="<?php $text_link['link'] ?>" class="escalation-side-text-link"><?php
 								}
 								if (!empty($text_link['text'])) {
-									?><?= $text_link['text'] ?><?php
+									?><?php $text_link['text'] ?><?php
 								}
 								if (!empty($text_link['link']) && !empty($text_link['text'])) {
 									?></a><?php
@@ -70,7 +70,7 @@
 							}
 							?></ul></div><?php
 						endif;
-					?><a href="<?=$url?>" class="escalation-title"><?=$title?></a><div class="minty-overlay"></div></h2>
+					?><a href="<?php $url?>" class="escalation-title"><?php $title?></a><div class="minty-overlay"></div></h2>
 				</li>
 			<?php endforeach; ?>
 		</ul>
@@ -92,4 +92,4 @@
 	</div>
 	<div class="clear"></div>
 </div>
-<?= $after_widget ?>
+<?php $after_widget ?>

@@ -8,7 +8,7 @@ get_header(); ?>
 	<div id="content-column">
 		<div id="content" role="main">
 			<?php if (have_posts()): ?>
-				<?= apply_filters('bm-its-content-nav', '', 'nav-above') ?>
+				<?php apply_filters('bm-its-content-nav', '', 'nav-above') ?>
 				<?php $post_cnt = 0; ?>
 				
 				<?php while(have_posts()): the_post(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 					<?php $post_cnt++ ?>
 					<?php do_action('its-story-well-after-story-'.$post_cnt); ?>
 				<?php endwhile; ?>
-				<?= apply_filters('bm-its-content-nav', '', 'nav-below') ?>
+				<?php apply_filters('bm-its-content-nav', '', 'nav-below') ?>
 			<?php else: ?>
 				<article id="post-0" class="post no-results not-found">
 					<header class="entry-header">
@@ -30,7 +30,7 @@ get_header(); ?>
 			<?php endif; ?>
 		</div>
 		<?php $pagination_out = its_pagination(array('greyed' => true, 'type' => 'list')); ?>
-		<div class="pagination-bottom"><?= $pagination_out ?></div>
+		<div class="pagination-bottom"><?php $pagination_out ?></div>
 	</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -34,12 +34,12 @@ $size = array(80, 60);
 <div id="content-column">
 	<div id="content" role="main">
 		<?php do_action( 'bp_before_blog_single_post' ) ?>
-		<h1 class="search-results-header">Search results for: <span class="search-results-term"><?= $search_term ?></span></h1>
+		<h1 class="search-results-header">Search results for: <span class="search-results-term"><?php $search_term ?></span></h1>
 		<div class="search-search-results-breakdown search-results-breakdown">
 			<?php if ($found_posts > 0): ?>
 				<div class="search-results-section results-section news-results-section">
-					<h3 class="results-section-heading"><?= sprintf('%s (%d)', __('News'), $found_posts) ?>
-							<a class="right blue back-link" href="<?= home_url().'/search/'.$search_term ?>">Back to All Results &raquo;</h3>
+					<h3 class="results-section-heading"><?php sprintf('%s (%d)', __('News'), $found_posts) ?>
+							<a class="right blue back-link" href="<?php home_url().'/search/'.$search_term ?>">Back to All Results &raquo;</h3>
 					<?php ice_get_template_part('search-results', 'news', true) ?>
 					<div class="search-results-section-bottom"></div>
 					<div class="cleaner"></div>
@@ -51,7 +51,7 @@ $size = array(80, 60);
 				<p class="bold">Your search did not find any results.</p>
 				<p>Please try again.</p>
 			</div>
-		<? } ?>
+		<?php } ?>
 		<?php do_action( 'bp_after_blog_single_post' ) ?>
 	</div><!-- #content -->
 </div>

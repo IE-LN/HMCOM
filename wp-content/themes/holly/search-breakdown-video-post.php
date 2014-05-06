@@ -19,11 +19,11 @@ $size = array(180, 135);
 ?>
 <?php if ($found_posts > 0): ?>
 	<div class="search-results-section results-section galleries-results-section">
-		<h3 class="results-section-heading"><?= sprintf('%s (%d)', __('Videos'), $found_posts) ?></h3>
+		<h3 class="results-section-heading"><?php sprintf('%s (%d)', __('Videos'), $found_posts) ?></h3>
 		<?php ice_get_template_part('search-results', 'video-post', true) ?>
 		<div class="search-results-section-bottom">
 			<div class="results-more right more">
-				<a href="<?= home_url() . '/search/videos/' . urlencode($search_term) ?>">see all videos &raquo;</a>
+				<a href="<?php home_url() . '/search/videos/' . urlencode($search_term) ?>">see all videos &raquo;</a>
 			</div>
 		</div>
 		<div class="clear"></div>

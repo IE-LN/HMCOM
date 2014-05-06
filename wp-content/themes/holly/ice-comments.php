@@ -159,7 +159,7 @@
                                 $signout_link = wp_logout_url($redir_link);
                                 ?>
                                 Signed in as a <a href="<?php do_action('comment-author-permalink', $userdata->user_nicename); ?>/"><?php echo $display_name; ?></a>.
-                                <a class="log-in-out-link" href="<?= $signout_link ?>">Sign Out</a>
+                                <a class="log-in-out-link" href="<?php $signout_link ?>">Sign Out</a>
                                 <?php cancel_comment_reply_link( __( ' Cancel Reply.', 'buddypress' ) ); ?>
                             </p>
                                     
@@ -177,7 +177,7 @@
                             -->
                             </script>
                             <p class="log-in-out-guest">
-                                <?= __('Commenting as a Guest. ', 'buddypress'); ?>
+                                <?php __('Commenting as a Guest. ', 'buddypress'); ?>
 																<?php
 																	$join_link = '#';
 																	$rlink = wp_register('', '', false);
@@ -210,16 +210,16 @@
 															<div class="commenting-errors errors">
 																<ul class="error-list">
 																	<?php foreach ($cerrors as $cerror): ?>
-																		<li class="error-item"><?= $cerror ?></li>
+																		<li class="error-item"><?php $cerror ?></li>
 																	<?php endforeach; ?>
 																</ul>
 															</div>
 														<?php endif; ?>
-                            <textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"><?=apply_filters('comment_form_content', '');?></textarea>
+                            <textarea name="comment" id="comment" cols="40" rows="10" tabindex="4"><?php apply_filters('comment_form_content', '');?></textarea>
 														<div class="comment-helper">
 															<?php global $allowedtags; ?>
 															You may use the following HTML tags inside the text of your comment: <br/>
-															<code><?= htmlspecialchars('<'.implode('> <', array_keys($allowedtags)).'>') ?></code>
+															<code><?php htmlspecialchars('<'.implode('> <', array_keys($allowedtags)).'>') ?></code>
 														</div>
                         </p>
 
@@ -260,11 +260,11 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <input type="text" class="text-input" name="author" id="author" value="<?= $comment_author; ?>" size="40" tabindex="1"
+                                                <input type="text" class="text-input" name="author" id="author" value="<?php $comment_author; ?>" size="40" tabindex="1"
                                                     onblur="javascript:check_author(this.value);"/>
                                             </td>
                                             <td>
-                                                <input type="text" class="text-input" name="email" id="email" value="<?= $comment_author_email; ?>" size="40" tabindex="2" />
+                                                <input type="text" class="text-input" name="email" id="email" value="<?php $comment_author_email; ?>" size="40" tabindex="2" />
                                             </td>
                                             <td>
                                                 <input class="submit-comment button" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit', 'buddypress'); ?>" />
@@ -284,9 +284,9 @@
                 <?php if (function_exists('ecu_upload_form')): ?>
                     <?php if (is_user_logged_in()): ?>
                         <div id="upload_form_wrapper">
-                            <? ecu_upload_form('','','Select File')?>
+                            <?php ecu_upload_form('','','Select File')?>
                             <div class="upload-help">
-                            <?=_e('JPG, PNG, GIF Only. For animated GIFs, paste image link in text box', 'buddypress');?>
+                            <?php _e('JPG, PNG, GIF Only. For animated GIFs, paste image link in text box', 'buddypress');?>
                             </div>
                         </div>
                     <?php endif; ?>

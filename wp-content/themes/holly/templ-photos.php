@@ -83,8 +83,8 @@ $size = array(180, 135);
 ?>
 <div class="displaying-line-wrapper">
 	<div class="displaying-line">
-		<div class="right displaying-numbers"><?= number_format($start) ?> - <?= number_format($end) ?> of <?= number_format($total) ?> total results</div>
-		<div class="left displaying-desc">Displaying <?= $displaying ?></div>
+		<div class="right displaying-numbers"><?php number_format($start) ?> - <?php number_format($end) ?> of <?php number_format($total) ?> total results</div>
+		<div class="left displaying-desc">Displaying <?php $displaying ?></div>
 		<div class="clear"></div>
 	</div>
 </div>
@@ -97,20 +97,20 @@ $size = array(180, 135);
 					<?php if ($ind % 3 == 0): ?><div class="grid-row"><?php endif; ?>
 					<div class="grid-item column gallery-item">
 						<div class="grid-item-inner">
-							<article id="post-<?= $post->ID ?>" <?php post_class(); ?>>
+							<article id="post-<?php $post->ID ?>" <?php post_class(); ?>>
 								<header>
-									<a href="<?= get_permalink($post->ID) ?>"  title="View <?= esc_attr(get_the_title()) ?>"><span class="key-hole kht180x135"><?=
+									<a href="<?php get_permalink($post->ID) ?>"  title="View <?php esc_attr(get_the_title()) ?>"><span class="key-hole kht180x135"><?php 
 										$ifunc(apply_filters('ice-get-thumbnail-id', 0, $post->ID), $size, $ice_img ? 'gallery-image' : false)
 									?></span></a>
-									<div class="gallery-categories entry-categories grey"><?= the_category(', ') ?></div>
-									<h2 class="gallery-title blackmaroon"><a href="<?= get_permalink() ?>" title="View <?= esc_attr(get_the_title()) ?>"><? the_title() ?></a></h2>
+									<div class="gallery-categories entry-categories grey"><?php the_category(', ') ?></div>
+									<h2 class="gallery-title blackmaroon"><a href="<?php get_permalink() ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php the_title() ?></a></h2>
 									<div class="gallery-photos-count bold">
-										<a href="<?= get_permalink($post->ID) ?>" title="View <?= esc_attr(get_the_title()) ?>"><?=
+										<a href="<?php get_permalink($post->ID) ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php 
 											sprintf('%d Photos &raquo;', apply_filters('ice-gallery-image-count', 0, $post->ID))
 										?></a>
 									</div>
 								</header>
-							</article><!-- end post-<?= $post->ID ?> -->
+							</article><!-- end post-<?php $post->ID ?> -->
 						</div>
 					</div>
 					<?php if ($ind % 3 == 2 || $wp_query->current_post + 1 == $wp_query->post_count): ?></div><?php endif; ?>
@@ -131,7 +131,7 @@ $size = array(180, 135);
 		</div>
 		<div class="clear"></div>
 	</div>
-	<div class="pagination-bottom"><?= $pagination_out ?></div>
+	<div class="pagination-bottom"><?php $pagination_out ?></div>
 </div>
 
 <?php
