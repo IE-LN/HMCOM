@@ -32,8 +32,8 @@ $page = isset($wp_query->query_vars['paged']) && intval($wp_query->query_vars['p
 $per_page = 15;
 
 // image function vars
-$ice_img = function_exists('ice_get_attachment_image');
-$ifunc = $ice_img ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
+//$ice_img = function_exists('ice_get_attachment_image');
+$ifunc = 'wp_get_attachment_image';//$ice_img ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
 
 $args = array(
 	'post_status' => 'publish',

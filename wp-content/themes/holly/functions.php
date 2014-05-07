@@ -163,7 +163,7 @@ function relative_time_post($time, $d, $gmt) {
 	$d = '';
 	return relative_time($time, $d, $gmt);
 }
-add_filter('get_post_time', 'relative_time_post', 10000, 3);
+//add_filter('get_post_time', 'relative_time_post', 10000, 3);
 
 function relative_time_comment($time, $d, $gmt) {
 	global $comment;

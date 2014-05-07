@@ -15,8 +15,8 @@ $is_fullsize = $fsenabled && is_fullsize();
 $use_sidebar = 'single'.($is_fullsize ? '-fullsize' : '').'-gallery-sidebar';
 
 // image function vars
-$ice_img = function_exists('ice_get_attachment_image');
-$ifunc = $ice_img ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
+//$ice_img = function_exists('ice_get_attachment_image');
+$ifunc = 'wp_get_attachment_image';//$ice_img ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
 
 // permalink functions with fullsize awareness
 $pfunc = $fsenabled && $is_fullsize && function_exists('get_fullsize_permalink') ? 'get_fullsize_permalink' : 'get_permalink';

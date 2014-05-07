@@ -6,7 +6,7 @@
 		</h2>
 
 		<div class="entry-meta">
-			<span class="post-date-label"><?php sprintf('<span class="%s">%s</span>', 'post-date', get_post_time()) ?></span>
+			<span class="post-date-label"><?php sprintf('<span class="post-date">%s</span>', the_time('F j, Y')) ?></span>
 			/ <span class="comments-link"><?php 
 				comments_popup_link('Leave a Comment<span></span>', '1 Comment<span></span>', '% Comments<span></span>', 'entry-comment-link its-icon its-quote');
 			?></span>

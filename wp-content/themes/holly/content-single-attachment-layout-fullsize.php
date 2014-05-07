@@ -37,7 +37,7 @@ function its_add_fullsize_to_permalink_for_comment_link($permalink, $post=null, 
 					<ul class="image-meta-list menu">
 						<?php $xtra = isset($_GET['page'], $_GET['t']) ? '?page='.(absint($_GET['page'])).'&t='.$_GET['t'] : '' ?>
 						<li><a class="back" href="<?php get_permalink().$xtra ?>">&laquo; Back to Photo</a></li>
-						<li> / <span class="date"><?php get_the_time() ?></span> / </li>
+						<li> / <span class="date"><?php get_the_time('F j, Y') ?></span> / </li>
 						<li><?php
 							add_action('post_link', 'its_add_fullsize_to_permalink_for_comment_link', 10, 3);
 							add_action('attachment_link', 'its_add_fullsize_to_permalink_for_comment_link', 10, 2);

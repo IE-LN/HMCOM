@@ -8,11 +8,12 @@
 	if ( is_page() && !have_comments() && !comments_open() && !pings_open() )
 		return;
 		
-	$all_comments = get_multipost_comments(array(
-		'post_id' => cb_post_id_with_main_embed_id_and_children_ids($post->ID),
+	$all_comments = get_comments(array(//get_multipost_comments(array(
+		'post_id' => $post->ID,//cb_post_id_with_main_embed_id_and_children_ids($post->ID),
 		'order' => 'ASC',
 		'after' => $post->post_date_gmt
 	));
+
 ?>
 <?php if (count($all_comments)): ?>
 	<div id="comments">
@@ -30,7 +31,7 @@
 				$cperpage = (($cperpage = get_option('comments_per_page')) ? $cperpage : 50);
 				wp_list_comments(
 					array(
-						'callback' => 'cb_dtheme_blog_comments',
+						//'callback' => 'cb_dtheme_blog_comments',
 						'per_page' => $cperpage
 					),
 					$all_comments
