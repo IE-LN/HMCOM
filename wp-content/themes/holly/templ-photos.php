@@ -37,7 +37,8 @@ $ifunc = 'wp_get_attachment_image';//$ice_img ? 'ice_get_attachment_image' : 'wp
 
 $args = array(
 	'post_status' => 'publish',
-	'post_type' => apply_filters('ice-gallery-post-type', 'gallery'),
+	//'post_type' => apply_filters('ice-gallery-post-type', 'gallery'),
+	'post_type' => 'gallery',
 	'posts_per_page' => $per_page,
 	'paged' => $page,
 );
@@ -99,11 +100,13 @@ $size = array(180, 135);
 						<div class="grid-item-inner">
 							<article id="post-<?php $post->ID ?>" <?php post_class(); ?>>
 								<header>
-									<a href="<?php get_permalink($post->ID) ?>"  title="View <?php esc_attr(get_the_title()) ?>"><span class="key-hole kht180x135"><?php 
-										$ifunc(apply_filters('ice-get-thumbnail-id', 0, $post->ID), $size, $ice_img ? 'gallery-image' : false)
-									?></span></a>
+									<a href="<?php the_permalink() ?>"  title="View <?php esc_attr(get_the_title()) ?>"><span class="key-hole kht180x135"><?php 
+										$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), $size);
+										$url = $thumb[0];
+										//$ifunc(apply_filters('ice-get-thumbnail-id', 0, $post->ID), $size, $ice_img ? 'gallery-image' : false)
+									?><img src="<?php echo $url ?>" /></span></a>
 									<div class="gallery-categories entry-categories grey"><?php the_category(', ') ?></div>
-									<h2 class="gallery-title blackmaroon"><a href="<?php get_permalink() ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php the_title() ?></a></h2>
+									<h2 class="gallery-title blackmaroon"><a href="<?php the_permalink() ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php the_title() ?></a></h2>
 									<div class="gallery-photos-count bold">
 										<a href="<?php get_permalink($post->ID) ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php 
 											sprintf('%d Photos &raquo;', apply_filters('ice-gallery-image-count', 0, $post->ID))
