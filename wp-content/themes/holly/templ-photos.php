@@ -84,8 +84,8 @@ $size = array(180, 135);
 ?>
 <div class="displaying-line-wrapper">
 	<div class="displaying-line">
-		<div class="right displaying-numbers"><?php number_format($start) ?> - <?php number_format($end) ?> of <?php number_format($total) ?> total results</div>
-		<div class="left displaying-desc">Displaying <?php $displaying ?></div>
+		<div class="right displaying-numbers"><?php echo number_format($start) ?> - <?php echo number_format($end) ?> of <?php echo number_format($total) ?> total results</div>
+		<div class="left displaying-desc">Displaying <?php echo $displaying ?></div>
 		<div class="clear"></div>
 	</div>
 </div>

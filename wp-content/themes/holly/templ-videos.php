@@ -16,7 +16,7 @@ $old_post = is_object($GLOBALS['post']) ? clone $GLOBALS['post'] : null;
 
 // figure out the cateogry if applicable
 $displaying = 'most recent videos';
-$cat = get_category_by_slug($post->post_name);//apply_filters('its-get-page-category', null, $post->ID);
+$cat = get_category_by_slug('videos');//apply_filters('its-get-page-category', null, $post->ID);
 
 $page = isset($wp_query->query_vars['paged']) && intval($wp_query->query_vars['paged']) > 1 ? intval($wp_query->query_vars['paged']) : 0;
 $per_page = 15;
@@ -28,6 +28,8 @@ $ifunc = 'wp_get_attachment_image';//$ice_img ? 'ice_get_attachment_image' : 'wp
 $args = array(
 	'post_status' => 'publish',
 	//'post_type' => apply_filters('ice-video-post-type', 'video-post'),
+	//'post_type' => 'video-post',
+	'cat' => '282',
 	'posts_per_page' => $per_page,
 	'paged' => $page,
 );
@@ -59,8 +61,8 @@ $size = array(180, 135);
 ?>
 <div class="displaying-line-wrapper">
 	<div class="displaying-line">
-		<div class="right displaying-numbers"><?php number_format($start) ?> - <?php number_format($end) ?> of <?php number_format($total) ?> total results</div>
-		<div class="left displaying-desc">Displaying <?php $displaying ?></div>
+		<div class="right displaying-numbers"><?php echo number_format($start) ?> - <?php echo number_format($end) ?> of <?php echo number_format($total) ?> total results</div>
+		<div class="left displaying-desc">Displaying <?php echo $displaying ?></div>
 		<div class="clear"></div>
 	</div>
 </div>
@@ -82,7 +84,7 @@ $size = array(180, 135);
 									?><img src="<?php echo $url ?>" /></span></a>
 									<h2 class="video-title blackmaroon"><a href="<?php the_permalink() ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php the_title() ?></a></h2>
 									<div class="video-photos-count bold">
-										<a href="<?php get_permalink($post->ID) ?>" title="Watch: <?php esc_attr(get_the_title()) ?>">Watch&nbsp;Video&nbsp;&raquo;</a>
+										<a href="<?php the_permalink() ?>" title="Watch: <?php esc_attr(get_the_title()) ?>">Watch&nbsp;Video&nbsp;&raquo;</a>
 									</div>
 								</header>
 							</article><!-- end post-<?php $post->ID ?> -->

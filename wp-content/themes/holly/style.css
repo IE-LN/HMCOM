@@ -490,7 +490,7 @@ footer .add-this-follow-us{
     border-top-width: 0;
     padding: 0;
 }
-.commentlist ul{
+.commentlist ul, .commentlist ol{
     margin: 0 0 10px;
 }
 .user-commented-on{
@@ -3487,3 +3487,10 @@ ol.commentlist-ice {
 #footer #comscore_container a:link { color: #FFFFFF; text-decoration: none; font-weight: normal }
 #footer #comscore_container a:visited { color: #FFFFFF; text-decoration: none; font-weight: normal }
 #footer #comscore_container a:hover { color: #A7A7A7; text-decoration: none; font-weight: normal }
+
+/*Comment fixes*/
+
+.comment-body p{
+	font-size: 12px;
+	line-height: 18px;
+}
