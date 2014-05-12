@@ -7,7 +7,6 @@
 					<div class="clear"></div>
 				</div>
 				<div class="clear"></div>
-				<div class="ads-728-center ads-top-margin ads-bottom-margin"><?php buzzmedia_ad_dart(array('728x90'), '728b') ?></div>
 				<footer class="page-footer" id="bottom-branding" role="contentinfo">
 					<a href="http://www.spinmedia.com/#locations">Contact Information</a> /
 					<a href="/terms/">Terms and Conditions</a> /

@@ -639,7 +639,7 @@ function its_second_make_robots_txt_404($current, $public) {
 }
 add_action('robots_txt', 'its_second_make_robots_txt_404');
 
-include 'includes/ads.php';
+//include 'includes/ads.php';
 
 function html_cache($key,$fn,$timeout) {
     //ini_set('display_errors', 1);

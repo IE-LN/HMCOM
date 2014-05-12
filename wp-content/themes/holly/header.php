@@ -12,7 +12,6 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 	<head>
-		<?php buzzmedia_top_script() ?>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width" />
 		<title><?php
@@ -44,13 +43,6 @@
 		}
 	?>
     <?php do_action('its-shared-nav', array('theme_location' => 'cb-shared-nav', 'fallback_cb' => 'its_no_default_menu'));?>
-		<div class="ads-728-center ads-top-margin ads-bottom-margin">
-			<div>
-				<div>
-					<?php buzzmedia_ad_dart(array('728x90'), '728a') ?>
-				</div>
-			</div>
-		</div>
 		<div id="page-wrapper">
 			<div class="shadow-shim left-shim"><table><tbody><tr><td class="top"></td></tr><tr><td class="middle"></td></tr><tr><td class="bottom"></td></tr></tbody></table></div>
 			<div class="shadow-shim right-shim"><table><tbody><tr><td class="top"></td></tr><tr><td class="middle"></td></tr><tr><td class="bottom"></td></tr></tbody></table></div>
