@@ -30,7 +30,7 @@ get_header(); ?>
 			<?php endif; ?>
 		</div>
 		<?php $pagination_out = its_pagination(array('greyed' => true, 'type' => 'list')); ?>
-		<div class="pagination-bottom"><?php $pagination_out ?></div>
+		<div class="pagination-bottom"><?php echo $pagination_out ?></div>
 	</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

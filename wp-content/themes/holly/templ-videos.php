@@ -16,18 +16,18 @@ $old_post = is_object($GLOBALS['post']) ? clone $GLOBALS['post'] : null;
 
 // figure out the cateogry if applicable
 $displaying = 'most recent videos';
-$cat = apply_filters('its-get-page-category', null, $post->ID);
+$cat = get_category_by_slug($post->post_name);//apply_filters('its-get-page-category', null, $post->ID);
 
 $page = isset($wp_query->query_vars['paged']) && intval($wp_query->query_vars['paged']) > 1 ? intval($wp_query->query_vars['paged']) : 0;
 $per_page = 15;
 
 // image function vars
-$ice_img = function_exists('ice_get_attachment_image');
-$ifunc = $ice_img ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
+//$ice_img = function_exists('ice_get_attachment_image');
+$ifunc = 'wp_get_attachment_image';//$ice_img ? 'ice_get_attachment_image' : 'wp_get_attachment_image';
 
 $args = array(
 	'post_status' => 'publish',
-	'post_type' => apply_filters('ice-video-post-type', 'video-post'),
+	//'post_type' => apply_filters('ice-video-post-type', 'video-post'),
 	'posts_per_page' => $per_page,
 	'paged' => $page,
 );
@@ -75,10 +75,12 @@ $size = array(180, 135);
 						<div class="grid-item-inner">
 							<article id="post-<?php $post->ID ?>" <?php post_class(); ?>>
 								<header>
-									<a href="<?php get_permalink($post->ID) ?>"  title="View <?php esc_attr(get_the_title()) ?>"><span class="key-hole kht180x135"><?php 
-										$ifunc(apply_filters('ice-get-thumbnail-id', 0, $post->ID), $size, $ice_img ? 'video-image' : false)
-									?></span></a>
-									<h2 class="video-title blackmaroon"><a href="<?php get_permalink() ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php the_title() ?></a></h2>
+									<a href="<?php the_permalink() ?>"  title="View <?php esc_attr(get_the_title()) ?>"><span class="key-hole kht180x135"><?php 
+										$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), $size);
+										$url = $thumb[0];
+										//$ifunc(apply_filters('ice-get-thumbnail-id', 0, $post->ID), $size, $ice_img ? 'video-image' : false)
+									?><img src="<?php echo $url ?>" /></span></a>
+									<h2 class="video-title blackmaroon"><a href="<?php the_permalink() ?>" title="View <?php esc_attr(get_the_title()) ?>"><?php the_title() ?></a></h2>
 									<div class="video-photos-count bold">
 										<a href="<?php get_permalink($post->ID) ?>" title="Watch: <?php esc_attr(get_the_title()) ?>">Watch&nbsp;Video&nbsp;&raquo;</a>
 									</div>
@@ -104,7 +106,7 @@ $size = array(180, 135);
 		</div>
 		<div class="clear"></div>
 	</div>
-	<div class="pagination-bottom"><?php $pagination_out ?></div>
+	<div class="pagination-bottom"><?php echo $pagination_out ?></div>
 </div>
 
 <?php

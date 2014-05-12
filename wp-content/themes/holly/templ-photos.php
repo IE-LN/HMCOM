@@ -134,7 +134,7 @@ $size = array(180, 135);
 		</div>
 		<div class="clear"></div>
 	</div>
-	<div class="pagination-bottom"><?php $pagination_out ?></div>
+	<div class="pagination-bottom"><?php echo $pagination_out ?></div>
 </div>
 
 <?php

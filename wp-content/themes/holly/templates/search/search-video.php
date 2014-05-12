@@ -85,7 +85,7 @@
         $args['search_type'] = $block['type'];
         $pagination_out = its_pagination(array('base' => trailingslashit(apply_filters('ice-search-link', '', $args)).'%_%', 'greyed' => true, 'type' => 'list', 'per_page' => $block['count_type']));
         ?>
-    <div class="pagination-bottom"><?php $pagination_out ?></div>
+    <div class="pagination-bottom"><?php echo $pagination_out ?></div>
     <?php endif; ?>
 </div>
 <?php endif; ?>

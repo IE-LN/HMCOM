@@ -98,7 +98,7 @@ get_header();
 			if (!empty($term_link) && !is_wp_error($term_link) && is_string($term_link))
 				$pagination_out = its_pagination(array('base' => $term_link.'%_%', 'greyed' => true, 'type' => 'list'));
 		?>
-		<div class="pagination-bottom"><?php $pagination_out ?></div>
+		<div class="pagination-bottom"><?php echo $pagination_out ?></div>
 
 	</div>
 
