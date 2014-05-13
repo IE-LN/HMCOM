@@ -12,7 +12,7 @@
 			?></span>
 			<span class="post-cat-author">
 				<span class="post-categories"><?php the_category(',') ?></span>
-				/ <span class="post-author">By <?php get_the_author() ?></span>
+				/ <span class="post-author">By <?php echo get_the_author() ?></span>
 			</span>
 			<?php edit_post_link(__('Edit', 'bm-its-core'), '<span class="edit-link blue">', '</span>'); ?>
 			<ul class="post-share-buttons menu">
