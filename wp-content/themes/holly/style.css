@@ -3528,3 +3528,7 @@ ol.commentlist-ice {
 	color: #000;
 	font-size: .8em;
 }
+
+#searchform .screen-reader-text {
+	font-size: 0px;
+}
