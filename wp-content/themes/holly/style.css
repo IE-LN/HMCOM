@@ -3513,7 +3513,28 @@ ol.commentlist-ice {
 #footer #comscore_container a:hover { color: #A7A7A7; text-decoration: none; font-weight: normal }
 
 .cleaner {
-	min-height: 15px;
+	height: 15px;
+}
+
+.widget ul { 
+	list-style: none; 
+}
+
+.widget ul li { 
+	display: block; 
+	width: 33.33%; 
+	float: left; 
+	padding-top: 10px;
+	height: 140px;
+	font-size: 12px;
+}
+
+.widget ul li a {
+	color: #000;
+}
+
+.widget ul li a:hover {
+	color: #5b1745;
 }
 
 /*Comment fixes*/
