@@ -47,8 +47,30 @@ if (empty($use_sidebar)) {
             </div>
         </form>
         
-        <div class="widget widget_text"> 
-        	<div class="cleaner"></div>       
+        <div class="bmsbw-container bmsbw-followCb bmsbw-followICE">
+ <div class="bmsbw-inside blackmaroon">
+  <table>
+   <tbody>
+    <tr>
+     <td class="follow-label">
+      <div class="follow-me-before"><a target="_blank" href="http://www.facebook.com/hollymadison/">FOLLOW HOLLY</a></div>
+     </td>
+     <td class="follow-spacer">&nbsp;</td>
+     <td class="follow-buttons ">
+      <ul>
+       <li class="bmsbw-follow-fb"><a target="_blank" href="http://www.facebook.com/hollymadison/"></a></li>
+       <li class="bmsbw-follow-tw"><a target="_blank" href="https://twitter.com/hollymadison"></a></li>
+       <li class="bmsbw-follow-rss"><a target="_blank" href="http://www.hollymadison.com/feed/"></a></li>
+             </ul>
+     </td>
+    </tr>
+   </tbody>
+  </table>
+ </div>
+</div>
+
+        	<div class="cleaner"></div>         
+        <div class="widget widget_text">       
             <h3 class="widget-title">RECENT VIDEOS</h3>
             <ul>
             <?php

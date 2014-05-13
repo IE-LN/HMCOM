@@ -3538,12 +3538,39 @@ ol.commentlist-ice {
 }
 
 /*Comment fixes*/
+#comments {
+	margin-top: 10px;
+}
 
-.comment-body p{
+#comments .cleaner {
+	height: 0px;
+}
+
+#comments .commentHead a.entry-comment-link {
+	color: #C06;
+}
+
+.comment-body {
+	margin-bottom: 10px;
+}
+
+.comment-body p, .comment-author {
 	font-size: 12px;
 	line-height: 18px;
 }
 
+.comment-body p a {
+	font-weight: bold;
+}
+
+cite.fn {
+	
+	font-weight: bold;
+}
+
+ol.commentlist li.comment .comment-body .comment-meta a:link, .comment-body .comment-meta a:hover, .comment-body .comment-meta a:visited {
+	color: #999;
+}
 
 .srp-post-title-link {
 	color: #000;
