@@ -14,6 +14,11 @@
 				<span class="post-categories"><?php the_category(',') ?></span>
 				/ <span class="post-author">By <?php get_the_author() ?></span>
 			</span>
+            <?php 
+				if(!in_category('videos')){
+					echo get_the_post_thumbnail( get_the_ID() );
+				}
+			?>
 			<?php edit_post_link(__('Edit', 'bm-its-core'), '<span class="edit-link blue">', '</span>'); ?>
 			<ul class="post-share-buttons menu">
 				<li class="share-button"><?php its_fb_like_button(); ?></li>

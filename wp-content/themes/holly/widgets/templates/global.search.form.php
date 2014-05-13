@@ -29,7 +29,7 @@
 				<div class="search-wrapper">
 					<div class="search-wrapper-border">
 						<div class="search-wrapper-inner">
-							<input type="image" class="floatR right search-submit" id="searchSubmit" name="searchSubmit" value="Search" src="<?php BMICE_URL ?>images/search-widget-btn.png" />
+							<input type="image" class="floatR right search-submit" id="searchSubmit" name="searchSubmit" value="Search" src="wp-content/themes/holly/images/search-widget-btn.png" />
 							<input type="text" id="s" class="inputText" name="s" value="<?php $s?>"
 							onchange="filterq()" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" />
 						</div>
