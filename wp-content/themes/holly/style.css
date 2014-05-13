@@ -3512,6 +3512,10 @@ ol.commentlist-ice {
 #footer #comscore_container a:visited { color: #FFFFFF; text-decoration: none; font-weight: normal }
 #footer #comscore_container a:hover { color: #A7A7A7; text-decoration: none; font-weight: normal }
 
+.cleaner {
+	min-height: 15px;
+}
+
 /*Comment fixes*/
 
 .comment-body p{
