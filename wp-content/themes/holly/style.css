@@ -470,6 +470,30 @@ footer .add-this-follow-us{
 #comments{
     width: 478px;
 }
+
+#comments a {
+	color: #09517b;
+}
+
+#comments .avatar {
+	display: none;
+}
+
+#comments .children .comment {
+	margin: 0 0 0 20px;
+	padding: 7px 10px 10px;
+	background-color: #efefef;
+	border-right: 1px solid #dfdfdf;
+	border-bottom: 1px dotted #dfdfdf;
+	overflow: auto;
+	width: 378px;
+	position: relative;
+}
+
+#comments .comment-reply-link {
+	font-size: .7em;
+}
+
 .vote-for-comment{
     padding: 4px 0 0 13px;
 }

@@ -12,6 +12,7 @@
 					<a href="/terms/">Terms and Conditions</a> /
 					<a href="http://www.spinmedia.com/privacy-policy/" target="_blank">Privacy Policy</a>
 				</footer>
+				<?php /*
 				<div id="footer">
 					<div id="comscore_container">
 						<div id="comscore_header_text">
@@ -50,6 +51,7 @@
 						</div>
 					</div>
 				</div>
+				*/?>
 			</div>
 		</div>
 		<?php wp_footer(); ?>
