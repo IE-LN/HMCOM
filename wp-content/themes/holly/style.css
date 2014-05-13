@@ -3580,3 +3580,7 @@ ol.commentlist li.comment .comment-body .comment-meta a:link, .comment-body .com
 #searchform .screen-reader-text {
 	font-size: 0px;
 }
+
+#main {
+	padding-top: 15px;
+}
