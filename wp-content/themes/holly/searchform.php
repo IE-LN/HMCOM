@@ -10,7 +10,6 @@
 			return encodeURIComponent(sv); // handle space and other stuff
 		}
 		</script>
-
 	<form id="search-form-cb" method="POST" action="<?php echo home_url() ?>/search/" onsubmit="this.action += filterq()" >
 		<div class="search-wrapper">
 			<div class="search-wrapper-border">

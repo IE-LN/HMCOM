@@ -152,12 +152,18 @@ nav#main-nav{
     position: absolute;
     display: table;
 }
+
+#branding.slim-height nav#main-nav {
+	top: 31px;
+}
+
 nav#main-nav .main-nav-inner{
     float: left;
 }
 nav#main-nav.three{
     position: static;
 }
+
 nav#main-nav li{
     border-left-width: 1px;
     border-left-style: solid;
@@ -366,7 +372,9 @@ footer .add-this-follow-us{
     height: auto;
     overflow: auto;
 }
-*/.avatar-box-30{
+*/
+
+.avatar-box-30{
     width: 30px;
     height: 30px;
     overflow: hidden;
@@ -379,6 +387,7 @@ footer .add-this-follow-us{
 #comment-upload-form{
     display: none;
 }
+
 .comments-form{
     width: 400px;
     position: relative;
@@ -3516,11 +3525,11 @@ ol.commentlist-ice {
 	height: 15px;
 }
 
-.widget ul { 
+.widget .execphpwidget ul { 
 	list-style: none; 
 }
 
-.widget ul li { 
+.widget .execphpwidget ul li { 
 	display: block; 
 	width: 33.33%; 
 	float: left; 
@@ -3529,11 +3538,11 @@ ol.commentlist-ice {
 	font-size: 12px;
 }
 
-.widget ul li a {
+.widget .execphpwidget ul li a {
 	color: #000;
 }
 
-.widget ul li a:hover {
+.widget .execphpwidget ul li a:hover {
 	color: #5b1745;
 }
 
@@ -3579,4 +3588,8 @@ ol.commentlist li.comment .comment-body .comment-meta a:link, .comment-body .com
 
 #main {
 	padding-top: 15px;
+}
+
+#search-form-cb {
+	margin-top: 10px;
 }
